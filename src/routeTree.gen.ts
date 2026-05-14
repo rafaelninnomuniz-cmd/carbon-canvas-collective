@@ -9,12 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TecnologiasRouteImport } from './routes/tecnologias'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as PesquisaRouteImport } from './routes/pesquisa'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TecnologiasRoute = TecnologiasRouteImport.update({
+  id: '/tecnologias',
+  path: '/tecnologias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -23,6 +30,11 @@ const SobreRoute = SobreRouteImport.update({
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacoesRoute = PublicacoesRouteImport.update({
+  id: '/publicacoes',
+  path: '/publicacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PesquisaRoute = PesquisaRouteImport.update({
@@ -45,42 +57,79 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/tecnologias': typeof TecnologiasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/tecnologias': typeof TecnologiasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
+  '/tecnologias': typeof TecnologiasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contato' | '/pesquisa' | '/servicos' | '/sobre'
+  fullPaths:
+    | '/'
+    | '/contato'
+    | '/pesquisa'
+    | '/publicacoes'
+    | '/servicos'
+    | '/sobre'
+    | '/tecnologias'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contato' | '/pesquisa' | '/servicos' | '/sobre'
-  id: '__root__' | '/' | '/contato' | '/pesquisa' | '/servicos' | '/sobre'
+  to:
+    | '/'
+    | '/contato'
+    | '/pesquisa'
+    | '/publicacoes'
+    | '/servicos'
+    | '/sobre'
+    | '/tecnologias'
+  id:
+    | '__root__'
+    | '/'
+    | '/contato'
+    | '/pesquisa'
+    | '/publicacoes'
+    | '/servicos'
+    | '/sobre'
+    | '/tecnologias'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   PesquisaRoute: typeof PesquisaRoute
+  PublicacoesRoute: typeof PublicacoesRoute
   ServicosRoute: typeof ServicosRoute
   SobreRoute: typeof SobreRoute
+  TecnologiasRoute: typeof TecnologiasRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tecnologias': {
+      id: '/tecnologias'
+      path: '/tecnologias'
+      fullPath: '/tecnologias'
+      preLoaderRoute: typeof TecnologiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -93,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/servicos'
       fullPath: '/servicos'
       preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicacoes': {
+      id: '/publicacoes'
+      path: '/publicacoes'
+      fullPath: '/publicacoes'
+      preLoaderRoute: typeof PublicacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pesquisa': {
@@ -123,8 +179,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   PesquisaRoute: PesquisaRoute,
+  PublicacoesRoute: PublicacoesRoute,
   ServicosRoute: ServicosRoute,
   SobreRoute: SobreRoute,
+  TecnologiasRoute: TecnologiasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
