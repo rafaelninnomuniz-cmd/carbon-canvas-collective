@@ -59,6 +59,23 @@ const services = [
   },
 ];
 
+const steps = [
+  { phase: "Fase 1 — Negócio", icon: Microscope, title: "Caracterização da Biomassa", text: "Análise físico-química da matéria-prima para definir a configuração ideal do reator e prever rendimentos." },
+  { phase: "Fase 1 — Negócio", icon: FlaskRound, title: "Testes em Escala Piloto", text: "Validação prática dos rendimentos e identificação antecipada de gargalos operacionais antes da escala industrial." },
+  { phase: "Fase 1 — Negócio", icon: FileCheck2, title: "Laudos Laboratoriais", text: "Certificação técnica e comercial dos produtos (biochar, bio-óleo, syngas) para garantir aceitação no mercado." },
+  { phase: "Fase 1 — Negócio", icon: ClipboardCheck, title: "Parecer Técnico", text: "Interpretação especializada dos laudos para alinhar a produção às demandas reais dos compradores." },
+  { phase: "Fase 2 — Estratégia", icon: Scale, title: "EVTE — Estudo de Viabilidade", text: "O coração do projeto: análise de CAPEX, OPEX e sensibilidade financeira para confirmar se o negócio é rentável." },
+  { phase: "Fase 2 — Estratégia", icon: Target, title: "Plano de Negócios", text: "Estratégias detalhadas de mercado, operações e marketing baseadas no melhor cenário apontado pelo EVTE." },
+  { phase: "Fase 3 — Tecnologia", icon: WorkflowIcon, title: "Projeto Básico de Engenharia", text: "Arquitetura preliminar, fluxogramas de processo e balanços de massa da planta industrial." },
+  { phase: "Fase 3 — Tecnologia", icon: Cog, title: "Projeto Executivo", text: "Detalhamento final de manuais, automação e componentes para construção e comissionamento da unidade." },
+];
+
+const failures = [
+  { icon: Truck, title: "Falha logística", text: "Plantas distantes da fonte de matéria-prima são fatais. O frete engole a margem e inviabiliza o OPEX antes do primeiro mês." },
+  { icon: AlertTriangle, title: "Negócio sem EVTE", text: "Comprar reator antes de validar mercado e viabilidade econômica. Tecnologia não cria viabilidade — apenas executa um modelo que já faz sentido." },
+  { icon: Flame, title: "Erros de engenharia básica", text: "Falta de controle de O₂, isolamento térmico deficiente, condensação ineficiente e instalações sem proteção contra explosão geram passivos diários." },
+];
+
 function ServicesPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
