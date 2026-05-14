@@ -1,5 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Briefcase, FlaskConical, GraduationCap, Workflow } from "lucide-react";
+import {
+  ArrowRight,
+  Briefcase,
+  FlaskConical,
+  GraduationCap,
+  Workflow,
+  Microscope,
+  FlaskRound,
+  FileCheck2,
+  ClipboardCheck,
+  Scale,
+  Target,
+  Workflow as WorkflowIcon,
+  Cog,
+  AlertTriangle,
+  Truck,
+  Flame,
+  ShieldAlert,
+  Quote,
+} from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
