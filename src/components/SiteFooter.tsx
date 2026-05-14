@@ -1,0 +1,36 @@
+import { Link } from "@tanstack/react-router";
+import { Linkedin, Mail } from "lucide-react";
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-border/40 mt-24">
+      <div className="mx-auto max-w-6xl px-6 py-12 grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 className="font-display text-lg font-semibold">Rafael Muniz</h3>
+          <p className="mt-2 text-sm text-muted-foreground max-w-xs">
+            Engenheiro, pesquisador e consultor em materiais avançados de carbono.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 text-sm">
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">Navegação</span>
+          <Link to="/sobre" className="hover:text-primary">Sobre</Link>
+          <Link to="/pesquisa" className="hover:text-primary">Pesquisa</Link>
+          <Link to="/servicos" className="hover:text-primary">Serviços</Link>
+          <Link to="/contato" className="hover:text-primary">Contato</Link>
+        </div>
+        <div className="flex flex-col gap-2 text-sm">
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">Conecte-se</span>
+          <a href="https://www.linkedin.com/in/rafaelmuniz/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
+            <Linkedin className="h-4 w-4" /> LinkedIn
+          </a>
+          <a href="mailto:contato@rafaelmuniz.com" className="inline-flex items-center gap-2 hover:text-primary">
+            <Mail className="h-4 w-4" /> contato@rafaelmuniz.com
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-border/40 py-6 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Rafael Muniz. Todos os direitos reservados.
+      </div>
+    </footer>
+  );
+}
