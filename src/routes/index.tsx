@@ -29,7 +29,9 @@ function HomePage() {
               Transformando <span className="text-gradient">resíduos</span> em <span className="text-gradient">grafeno</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              Engenheiro, consultor, pesquisador e educador. Atuo no desenvolvimento de tecnologias disruptivas para converter resíduos em carbonos precursores e materiais grafênicos de alto valor.
+              Pós-doutor em Engenharia, especialista em saneamento energético e tecnologias
+              termoquímicas — pirólise, gaseificação e biodigestão — para converter resíduos em
+              biochar, syngas, biogás, carbonos precursores e grafeno.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/pesquisa" className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90 transition">
