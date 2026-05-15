@@ -3,13 +3,26 @@
 //   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, cloudflare (build-only),
 //     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
 //     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+// Static SPA build for shared hosting (Hostinger).
+// - `spa.enabled` makes the build emit a client-only bundle with an index.html shell.
+// - `prerender.crawlLinks` walks <Link> graph from "/" and emits one HTML file per route.
+// - `cloudflare: false` disables the Cloudflare Worker output so `dist/` is plain static files.
 export default defineConfig({
+  cloudflare: false,
   tanstackStart: {
     server: { entry: "server" },
+    spa: {
+      enabled: true,
+      prerender: {
+        crawlLinks: true,
+      },
+    },
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      failOnError: false,
+    },
   },
 });
