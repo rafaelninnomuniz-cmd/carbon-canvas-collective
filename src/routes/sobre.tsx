@@ -17,10 +17,25 @@ function AboutPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-2xl bg-primary/15 blur-2xl" />
-          <img src={portrait} alt="Retrato de Rafael Muniz" width={1024} height={1280} loading="lazy"
-            className="relative rounded-2xl border border-border/60" />
+        <div className="relative lg:sticky lg:top-24">
+          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent blur-3xl" />
+          <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/40 via-border to-transparent" />
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background">
+            <img
+              src={portrait}
+              alt="Retrato de Rafael Muniz em planta industrial de pirólise"
+              width={1024}
+              height={1280}
+              loading="lazy"
+              className="relative w-full h-auto contrast-105 saturate-50 brightness-95"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/25 via-transparent to-background/10 mix-blend-overlay" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-widest text-foreground/80">
+              <span>Rafael N. Muniz</span>
+              <span className="text-primary">PhD · Eng.</span>
+            </div>
+          </div>
         </div>
         <div>
           <span className="text-xs font-mono uppercase tracking-widest text-primary">Sobre</span>
