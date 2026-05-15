@@ -134,9 +134,9 @@ function ServicesPage() {
           <Quote className="h-8 w-8 shrink-0 text-primary" />
           <div>
             <p className="font-display text-xl sm:text-2xl leading-snug">
-              "A tecnologia é uma ferramenta. O negócio é a estratégia. Quando a ordem é
-              invertida, o resultado é previsível: investimento perdido, tecnologia culpada
-              e lições aprendidas no prejuízo."
+              “Tecnologia é meio, estratégia é direção. Quando essa ordem se inverte, o
+              destino é sempre o mesmo: desperdício, frustração e uma lição cara sobre
+              decisões mal fundamentadas.”
             </p>
             <p className="mt-3 text-sm text-muted-foreground">— Rafael Ninno Muniz, PhD</p>
           </div>
