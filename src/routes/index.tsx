@@ -50,9 +50,6 @@ function HomePage() {
                 Conheça Mais
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
-              <Link to="/servicos" className="inline-flex items-center gap-2 rounded-md border border-border bg-background/40 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary/50 hover:text-primary transition">
-                Serviços
-              </Link>
               <Link to="/contato" className="inline-flex items-center gap-2 rounded-md border border-border bg-background/40 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary/50 hover:text-primary transition">
                 Vamos conversar
               </Link>
