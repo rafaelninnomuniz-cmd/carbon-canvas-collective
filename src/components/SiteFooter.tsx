@@ -1,12 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
+
+const WHATSAPP_URL =
+  "https://wa.me/5543996926350?text=" +
+  encodeURIComponent("Olá Rafael, vim através do website!\nGostaria de maiores informações sobre seus serviços.");
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/40 mt-24">
       <div className="mx-auto max-w-6xl px-6 py-12 grid gap-8 md:grid-cols-3">
         <div>
-          <h3 className="font-display text-lg font-semibold">Rafael Muniz</h3>
+          <h3 className="font-display text-lg font-semibold">Rafael Ninno Muniz</h3>
           <p className="mt-2 text-sm text-muted-foreground max-w-xs">
             Engenheiro, Pesquisador e Educador.
           </p>
@@ -27,6 +31,9 @@ export function SiteFooter() {
           </a>
           <a href="https://www.instagram.com/munizrn?igsh=MWJyOWhram9hdzY0ZA==" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
             <Instagram className="h-4 w-4" /> Instagram
+          </a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
+            <MessageCircle className="h-4 w-4" /> WhatsApp
           </a>
           <a href="mailto:rafael@ninnomuniz.com" className="inline-flex items-center gap-2 hover:text-primary">
             <Mail className="h-4 w-4" /> rafael@ninnomuniz.com
