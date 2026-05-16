@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Flame, Wind, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
+import bgPlant from "@/assets/bg-plant.jpg";
 
 export const Route = createFileRoute("/tecnologias")({
   head: () => ({
@@ -64,11 +65,25 @@ const techs = [
 export default function TechPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="relative mx-auto max-w-6xl px-6 py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-3xl"
+        >
+          <img
+            src={bgPlant}
+            alt=""
+            width={1536}
+            height={1024}
+            loading="lazy"
+            className="h-full w-full object-cover opacity-[0.12]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        </div>
         <div className="max-w-3xl">
           <span className="text-xs font-mono uppercase tracking-widest text-primary">Tecnologias</span>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-            Rotas tecnológicas para <span className="text-gradient">converter resíduos em energia e materiais</span>.
+            <span className="text-gradient">Rotas tecnológicas</span> para converter resíduos em energia e materiais avançados.
           </h1>
           <p className="mt-5 text-muted-foreground">
             Atuo no desenvolvimento, modelagem e otimização de três pilares centrais do
