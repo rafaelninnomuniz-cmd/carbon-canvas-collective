@@ -42,14 +42,16 @@ function HomePage() {
               Engenharia Disruptiva, <span className="text-gradient">Tecnologias Sustentáveis</span>.
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-lg text-muted-foreground">
-              Pós-doutor em Engenharia, especialista em saneamento energético e tecnologias
-              termoquímicas — pirólise, gaseificação e biodigestão — para converter resíduos em
-              biochar, syngas, biogás, carbonos precursores e grafeno.
+              Engenheiro Doutor em Termoquímica, especialista em saneamento energético.
+              Transformo despesas (resíduos) em receitas (materiais avançados com alto valor agregado).
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link to="/sobre" className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90 transition">
                 Conheça Mais
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+              </Link>
+              <Link to="/servicos" className="inline-flex items-center gap-2 rounded-md border border-border bg-background/40 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary/50 hover:text-primary transition">
+                Serviços
               </Link>
               <Link to="/contato" className="inline-flex items-center gap-2 rounded-md border border-border bg-background/40 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary/50 hover:text-primary transition">
                 Vamos conversar
