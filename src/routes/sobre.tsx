@@ -44,27 +44,24 @@ function AboutPage() {
           </h1>
           <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
             <p>
-              Sou <strong className="text-foreground">Rafael Ninno Muniz</strong> — engenheiro,
-              pesquisador, consultor e educador. Pós-doutor em Engenharia de Produção e Sistemas
-              Computacionais (UFF), Doutor em Engenharia Elétrica com ênfase em planejamento
-              energético e sistemas inteligentes (UFPA), Mestre em Fontes Renováveis de Energia
-              e Bacharel em Engenharia Elétrica.
+              Sou <strong className="text-foreground">Rafael Ninno Muniz</strong> — Engenheiro
+              com Pós-doutorado em Termoquímica, Doutor em Sustentabilidade Energética, Mestre
+              em Fontes Renováveis de Energia e Bacharel em Engenharia Elétrica.
             </p>
             <p>
               Atuo na fronteira entre <strong className="text-foreground">saneamento energético</strong>,
-              tecnologias termoquímicas (pirólise e gaseificação) e bioquímicas (biodigestão) para
-              o tratamento de resíduos com aproveitamento energético — transformando lodo de ETE,
-              biomassa e resíduos têxteis em biochar, syngas, biogás e carbonos precursores de
-              alto valor agregado, incluindo grafeno.
+              tecnologias termoquímicas (pirólise e gaseificação) e bioquímica (biodigestão) para
+              o tratamento de resíduos — transformando lodo de ETE, biomassas e resíduos
+              industriais em biochar, syngas, biogás e carbonos precursores de alto valor
+              agregado, incluindo grafeno.
             </p>
             <p>
               Lidero iniciativas de PD&I para descarbonização da matriz energética como
               <strong className="text-foreground"> CTO da TexGenera</strong> (regeneração de têxteis em grafeno),
               <strong className="text-foreground"> Diretor de Tecnologias na LightFy Energia</strong>,
               <strong className="text-foreground"> CEO da E-Fuzzy</strong> (sistemas inteligentes para
-              descarbonização industrial) e pesquisador colaborador do
-              <strong className="text-foreground"> LEI/UFF</strong>, integrando ciência de bancada,
-              modelagem fuzzy, IA e viabilidade industrial.
+              descarbonização industrial), integrando ciência de bancada, modelagem de negócios,
+              IA e viabilidade industrial.
             </p>
             <p>
               Como educador, contribuo na formação de engenheiros e pesquisadores que constroem
@@ -74,9 +71,9 @@ function AboutPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { k: "Pós-Dr", v: "UFF · UFPA" },
-              { k: "53", v: "publicações científicas" },
-              { k: "13.7k+", v: "leituras no ResearchGate" },
+              { k: "70+", v: "consultorias executadas" },
+              { k: "100+", v: "publicações científicas" },
+              { k: "13.7k+", v: "leituras e citações no ResearchGate" },
             ].map((s) => (
               <div key={s.v} className="rounded-xl border border-border/60 bg-card/50 p-5">
                 <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>

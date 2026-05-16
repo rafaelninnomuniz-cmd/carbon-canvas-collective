@@ -85,8 +85,9 @@ function ServicesPage() {
           Da ideia à <span className="text-gradient">implementação</span>.
         </h1>
         <p className="mt-5 text-muted-foreground">
-          Atendimento personalizado para empresas, centros de pesquisa e startups que
-          desenvolvem soluções com materiais de carbono e tecnologias sustentáveis.
+          Desenvolvemos soluções sob medida para empresas, indústrias, centros de pesquisa e
+          startups que desejam integrar gestão sustentável de resíduos, geração de energia e
+          inovação tecnológica em um modelo eficiente e responsável.
         </p>
       </div>
 
