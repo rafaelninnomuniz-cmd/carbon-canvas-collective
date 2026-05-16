@@ -69,8 +69,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
       { name: "twitter:description", content: "Engenheiro, consultor, pesquisador e educador. Conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a5b6200-07f8-4159-9b4d-9ccd0adecbd7" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a5b6200-07f8-4159-9b4d-9ccd0adecbd7" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ef7ebc64-a29f-4c3e-ad98-8cd9f583076c" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ef7ebc64-a29f-4c3e-ad98-8cd9f583076c" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
