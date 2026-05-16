@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Beaker, CircuitBoard, Layers, Microscope, Sparkles, Zap } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Beaker, CircuitBoard, Layers, Microscope, Sparkles, Zap, Rocket } from "lucide-react";
+import bgLab from "@/assets/bg-lab.jpg";
 
 export const Route = createFileRoute("/pesquisa")({
   head: () => ({
@@ -24,7 +25,18 @@ const lines = [
 
 function ResearchPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section className="relative mx-auto max-w-6xl px-6 py-20">
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <img
+          src={bgLab}
+          alt=""
+          width={1536}
+          height={1024}
+          loading="lazy"
+          className="h-full w-full object-cover opacity-[0.10]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
+      </div>
       <div className="max-w-3xl">
         <span className="text-xs font-mono uppercase tracking-widest text-primary">Pesquisa</span>
         <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
@@ -61,6 +73,29 @@ function ResearchPage() {
               <p className="mt-1 text-muted-foreground">{s.d}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-12 relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-background p-8 sm:p-10">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="flex items-start gap-4">
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary border border-primary/30">
+              <Rocket className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-semibold">Pronto para escalar sua pesquisa para fora da bancada?</h3>
+              <p className="mt-2 text-muted-foreground">
+                Transformo resultados de laboratório em rotas industriais viáveis — da prova
+                de conceito ao piloto, com modelagem técnica, EVTE e estratégia tecnológica.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/contato"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-[var(--shadow-glow)]"
+          >
+            Vamos escalar juntos <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
