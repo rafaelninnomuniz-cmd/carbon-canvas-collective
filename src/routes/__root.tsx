@@ -69,8 +69,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
       { name: "twitter:description", content: "Engenheiro, consultor, pesquisador e educador. Conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e667e92d-4ae2-48ca-8569-53409c3c8860/id-preview-d1643862--9d7aeacf-225f-4901-baec-ab359ad46aaa.lovable.app-1778811165664.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e667e92d-4ae2-48ca-8569-53409c3c8860/id-preview-d1643862--9d7aeacf-225f-4901-baec-ab359ad46aaa.lovable.app-1778811165664.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ZBCk96eYFgXK9R43kl1GiAF5UHg2/social-images/social-1778944579396-ChatGPT_Image_13_de_fev._de_2026,_12_26_08.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ZBCk96eYFgXK9R43kl1GiAF5UHg2/social-images/social-1778944579396-ChatGPT_Image_13_de_fev._de_2026,_12_26_08.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
