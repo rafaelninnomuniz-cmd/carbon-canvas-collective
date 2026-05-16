@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -8,14 +8,16 @@ export function SiteFooter() {
         <div>
           <h3 className="font-display text-lg font-semibold">Rafael Muniz</h3>
           <p className="mt-2 text-sm text-muted-foreground max-w-xs">
-            Engenheiro, pesquisador e consultor em materiais avançados de carbono.
+            Engenheiro, Pesquisador e Educador.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <span className="text-xs uppercase tracking-widest text-muted-foreground">Navegação</span>
           <Link to="/sobre" className="hover:text-primary">Sobre</Link>
-          <Link to="/pesquisa" className="hover:text-primary">Pesquisa</Link>
           <Link to="/servicos" className="hover:text-primary">Serviços</Link>
+          <Link to="/tecnologias" className="hover:text-primary">Tecnologias</Link>
+          <Link to="/pesquisa" className="hover:text-primary">Pesquisa</Link>
+          <Link to="/publicacoes" className="hover:text-primary">Publicações</Link>
           <Link to="/contato" className="hover:text-primary">Contato</Link>
         </div>
         <div className="flex flex-col gap-2 text-sm">
@@ -23,8 +25,11 @@ export function SiteFooter() {
           <a href="https://www.linkedin.com/in/rafaelmuniz/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
             <Linkedin className="h-4 w-4" /> LinkedIn
           </a>
-          <a href="mailto:contato@rafaelmuniz.com" className="inline-flex items-center gap-2 hover:text-primary">
-            <Mail className="h-4 w-4" /> contato@rafaelmuniz.com
+          <a href="https://www.instagram.com/munizrn?igsh=MWJyOWhram9hdzY0ZA==" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
+            <Instagram className="h-4 w-4" /> Instagram
+          </a>
+          <a href="mailto:rafael@ninnomuniz.com" className="inline-flex items-center gap-2 hover:text-primary">
+            <Mail className="h-4 w-4" /> rafael@ninnomuniz.com
           </a>
         </div>
       </div>
