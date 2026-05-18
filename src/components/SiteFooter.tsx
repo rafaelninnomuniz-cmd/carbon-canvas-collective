@@ -20,6 +20,7 @@ export function SiteFooter() {
           <Link to="/sobre" className="hover:text-primary">Sobre</Link>
           <Link to="/servicos" className="hover:text-primary">Serviços</Link>
           <Link to="/tecnologias" className="hover:text-primary">Tecnologias</Link>
+          <Link to="/projetos" className="hover:text-primary">Projetos</Link>
           <Link to="/pesquisa" className="hover:text-primary">Pesquisa</Link>
           <Link to="/publicacoes" className="hover:text-primary">Publicações</Link>
           <Link to="/contato" className="hover:text-primary">Contato</Link>
