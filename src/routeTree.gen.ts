@@ -13,6 +13,7 @@ import { Route as TecnologiasRouteImport } from './routes/tecnologias'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
+import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as PesquisaRouteImport } from './routes/pesquisa'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const PublicacoesRoute = PublicacoesRouteImport.update({
   path: '/publicacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PesquisaRoute = PesquisaRouteImport.update({
   id: '/pesquisa',
   path: '/pesquisa',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/pesquisa': typeof PesquisaRoute
+  '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/pesquisa'
+    | '/projetos'
     | '/publicacoes'
     | '/servicos'
     | '/sobre'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/pesquisa'
+    | '/projetos'
     | '/publicacoes'
     | '/servicos'
     | '/sobre'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/pesquisa'
+    | '/projetos'
     | '/publicacoes'
     | '/servicos'
     | '/sobre'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   PesquisaRoute: typeof PesquisaRoute
+  ProjetosRoute: typeof ProjetosRoute
   PublicacoesRoute: typeof PublicacoesRoute
   ServicosRoute: typeof ServicosRoute
   SobreRoute: typeof SobreRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pesquisa': {
       id: '/pesquisa'
       path: '/pesquisa'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   PesquisaRoute: PesquisaRoute,
+  ProjetosRoute: ProjetosRoute,
   PublicacoesRoute: PublicacoesRoute,
   ServicosRoute: ServicosRoute,
   SobreRoute: SobreRoute,

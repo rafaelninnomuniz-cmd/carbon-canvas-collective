@@ -7,6 +7,7 @@ const nav = [
   { to: "/sobre", label: "Sobre" },
   { to: "/servicos", label: "Serviços" },
   { to: "/tecnologias", label: "Tecnologias" },
+  { to: "/projetos", label: "Projetos" },
   { to: "/pesquisa", label: "Pesquisa" },
   { to: "/publicacoes", label: "Publicações" },
   { to: "/contato", label: "Contato" },
