@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Instagram, Linkedin, Mail, MessageCircle, Youtube } from "lucide-react";
 
 const WHATSAPP_URL =
   "https://wa.me/5543996926350?text=" +
@@ -22,11 +22,14 @@ export function SiteFooter() {
           <Link to="/tecnologias" className="hover:text-primary">Tecnologias</Link>
           <Link to="/projetos" className="hover:text-primary">Projetos</Link>
           <Link to="/pesquisa" className="hover:text-primary">Pesquisa</Link>
-          <Link to="/publicacoes" className="hover:text-primary">Publicações</Link>
+          
           <Link to="/contato" className="hover:text-primary">Contato</Link>
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <span className="text-xs uppercase tracking-widest text-muted-foreground">Conecte-se</span>
+          <a href="https://www.youtube.com/@ninnomuniz" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
+            <Youtube className="h-4 w-4" /> YouTube
+          </a>
           <a href="https://www.linkedin.com/in/rafaelmuniz/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
             <Linkedin className="h-4 w-4" /> LinkedIn
           </a>
