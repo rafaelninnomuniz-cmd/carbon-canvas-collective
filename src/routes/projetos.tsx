@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Atom, Cog, Recycle, Zap, Handshake } from "lucide-react";
+import { ArrowRight, Atom, Cog, Recycle, Zap, Handshake, Youtube } from "lucide-react";
 import bgProjetos from "@/assets/bg-projetos.jpg";
 
 export const Route = createFileRoute("/projetos")({
@@ -131,6 +131,85 @@ function ProjectsPage() {
               )}
             </article>
           ))}
+        </div>
+
+        <div className="mt-20">
+          <div className="max-w-3xl">
+            <span className="text-xs font-mono uppercase tracking-widest text-primary">Em vídeo</span>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">
+              Os projetos <span className="text-gradient">em movimento</span>.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Conteúdos do canal mostrando bastidores, aplicações e os avanços
+              tecnológicos por trás dos projetos em execução.
+            </p>
+            <a
+              href="https://www.youtube.com/@ninnomuniz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition"
+            >
+              <Youtube className="h-4 w-4" />
+              Visitar canal @ninnomuniz
+            </a>
+          </div>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {[
+              {
+                id: "DlPOobvVL-0",
+                title: "Tecnologias termoquímicas em ação",
+                desc: "Visão prática sobre rotas termoquímicas aplicadas ao tratamento de resíduos e geração de materiais carbonáceos de valor agregado.",
+                short: false,
+              },
+              {
+                id: "wl2DjdbPV5A",
+                title: "Saneamento energético e biochar",
+                desc: "Como o lodo de ETE deixa de ser passivo ambiental e vira insumo agronômico via pirólise — base do Projeto Retransformar.",
+                short: false,
+              },
+              {
+                id: "dDKnNfrhw_Q",
+                title: "Grafeno a partir de resíduos têxteis",
+                desc: "Pílula rápida sobre a rota de conversão circular têxtil → carbono precursor → grafeno desenvolvida pela TexGenera.",
+                short: true,
+              },
+              {
+                id: "hHA5WNyTAOo",
+                title: "Energia, IA e descarbonização",
+                desc: "Recorte direto sobre a integração entre tecnologias energéticas, inteligência artificial e a transição de baixo carbono.",
+                short: true,
+              },
+            ].map((v) => (
+              <article
+                key={v.id}
+                className="rounded-2xl border border-border/60 bg-card/50 overflow-hidden"
+              >
+                <div className={v.short ? "relative w-full mx-auto" : "relative w-full"} style={v.short ? { aspectRatio: "9 / 16", maxWidth: "320px" } : { aspectRatio: "16 / 9" }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}`}
+                    title={v.title}
+                    loading="lazy"
+                    allow="accelerated-sensors; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-lg font-semibold">{v.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                  <a
+                    href={`https://youtu.be/${v.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                  >
+                    Assistir no YouTube <ArrowRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-background p-8 sm:p-10">

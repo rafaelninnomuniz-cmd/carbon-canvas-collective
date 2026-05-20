@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Atom, FlaskConical, GraduationCap, Leaf, Lightbulb, Recycle } from "lucide-react";
+import { ArrowRight, Atom, FlaskConical, GraduationCap, Leaf, Lightbulb, Recycle, Rocket } from "lucide-react";
 import heroImg from "@/assets/hero-graphene.jpg";
 
 export const Route = createFileRoute("/")({
@@ -113,6 +113,44 @@ function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PROJETOS EM DESTAQUE */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-widest text-primary">Projetos em execução</span>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">
+              Tecnologia aplicada em <span className="text-gradient">escala real</span>.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Do grafeno a partir de resíduos têxteis ao tratamento térmico de lodo de
+              ETE, passando por catalisadores automotivos e geração híbrida para Data
+              Centers urbanos — um portfólio de projetos vivos, conectando ciência,
+              indústria e descarbonização.
+            </p>
+            <Link
+              to="/projetos"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90"
+            >
+              <Rocket className="h-4 w-4" /> Conheça os projetos <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {[
+              { t: "Projeto Grafeno", d: "Resíduos têxteis → carbono precursor → grafeno." },
+              { t: "Smart Materials", d: "Carbonos para catalisadores automotivos." },
+              { t: "Retransformar", d: "Pirólise de lodo de ETE em biochar nutricional." },
+              { t: "UPC + BESS", d: "Geração híbrida multicombustível para Data Centers." },
+            ].map((p) => (
+              <li key={p.t} className="rounded-xl border border-border/60 bg-card/50 p-5 transition hover:border-primary/40">
+                <div className="text-[11px] font-mono uppercase tracking-widest text-primary">Em execução</div>
+                <div className="mt-1 font-display text-lg font-semibold">{p.t}</div>
+                <p className="mt-1 text-sm text-muted-foreground">{p.d}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
