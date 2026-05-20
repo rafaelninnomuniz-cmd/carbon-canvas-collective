@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Youtube, Linkedin, Instagram, BookOpen, ExternalLink } from "lucide-react";
 import portrait from "@/assets/portrait.jpg";
 
 export const Route = createFileRoute("/sobre")({
@@ -113,6 +114,72 @@ function AboutPage() {
                   {t}
                 </span>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h2 className="font-display text-xl font-semibold">Redes Sociais</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Acompanhe meus conteúdos, projetos e pesquisas — com destaque para o
+              canal no YouTube, onde compartilho bastidores de tecnologia, ciência
+              aplicada e descarbonização industrial.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://www.youtube.com/@ninnomuniz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group sm:col-span-2 flex items-center gap-4 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-background p-5 transition hover:border-primary/60"
+              >
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary border border-primary/30">
+                  <Youtube className="h-6 w-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] font-mono uppercase tracking-widest text-primary">Canal em destaque</div>
+                  <div className="font-display text-lg font-semibold">YouTube · @ninnomuniz</div>
+                  <div className="text-xs text-muted-foreground truncate">youtube.com/@ninnomuniz</div>
+                </div>
+                <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rafaelmuniz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-xl border border-border/60 bg-card/50 p-4 transition hover:border-primary/40"
+              >
+                <Linkedin className="h-5 w-5 text-primary" />
+                <div className="flex-1 min-w-0">
+                  <div className="font-display text-sm font-semibold">LinkedIn</div>
+                  <div className="text-xs text-muted-foreground truncate">in/rafaelmuniz</div>
+                </div>
+                <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary" />
+              </a>
+              <a
+                href="https://www.instagram.com/munizrn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-xl border border-border/60 bg-card/50 p-4 transition hover:border-primary/40"
+              >
+                <Instagram className="h-5 w-5 text-primary" />
+                <div className="flex-1 min-w-0">
+                  <div className="font-display text-sm font-semibold">Instagram</div>
+                  <div className="text-xs text-muted-foreground truncate">@munizrn</div>
+                </div>
+                <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary" />
+              </a>
+              <a
+                href="https://www.researchgate.net/profile/Rafael-Muniz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group sm:col-span-2 flex items-center gap-3 rounded-xl border border-border/60 bg-card/50 p-4 transition hover:border-primary/40"
+              >
+                <BookOpen className="h-5 w-5 text-primary" />
+                <div className="flex-1 min-w-0">
+                  <div className="font-display text-sm font-semibold">ResearchGate</div>
+                  <div className="text-xs text-muted-foreground truncate">researchgate.net/profile/Rafael-Muniz</div>
+                </div>
+                <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary" />
+              </a>
             </div>
           </div>
         </div>
