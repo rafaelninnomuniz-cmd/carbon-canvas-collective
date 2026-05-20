@@ -158,20 +158,20 @@ function ProjectsPage() {
             {[
               {
                 id: "DlPOobvVL-0",
-                title: "Tecnologias termoquímicas em ação",
-                desc: "Visão prática sobre rotas termoquímicas aplicadas ao tratamento de resíduos e geração de materiais carbonáceos de valor agregado.",
-                short: false,
-              },
-              {
-                id: "wl2DjdbPV5A",
                 title: "Saneamento energético e biochar",
                 desc: "Como o lodo de ETE deixa de ser passivo ambiental e vira insumo agronômico via pirólise — base do Projeto Retransformar.",
                 short: false,
               },
               {
+                id: "wl2DjdbPV5A",
+                title: "Tecnologias termoquímicas em ação",
+                desc: "Visão prática sobre rotas termoquímicas aplicadas ao tratamento de resíduos e geração de materiais carbonáceos de valor agregado.",
+                short: false,
+              },
+              {
                 id: "dDKnNfrhw_Q",
-                title: "Grafeno a partir de resíduos têxteis",
-                desc: "Pílula rápida sobre a rota de conversão circular têxtil → carbono precursor → grafeno desenvolvida pela TexGenera.",
+                title: "Gás de Síntese de Pirólise",
+                desc: "Veja o gás gerado pela pirólise da madeira em ação.",
                 short: true,
               },
               {
