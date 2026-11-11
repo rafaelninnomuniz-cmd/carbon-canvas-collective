@@ -9,43 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TecnologiasRouteImport } from './routes/tecnologias'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as ServicosRouteImport } from './routes/servicos'
-import { Route as PublicacoesRouteImport } from './routes/publicacoes'
-import { Route as ProjetosRouteImport } from './routes/projetos'
-import { Route as PesquisaRouteImport } from './routes/pesquisa'
-import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as PesquisaRouteImport } from './routes/pesquisa'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as PublicacoesRouteImport } from './routes/publicacoes'
+import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TecnologiasRouteImport } from './routes/tecnologias'
+import { Route as TexgeneraRouteImport } from './routes/texgenera'
 
-const TecnologiasRoute = TecnologiasRouteImport.update({
-  id: '/tecnologias',
-  path: '/tecnologias',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicosRoute = ServicosRouteImport.update({
-  id: '/servicos',
-  path: '/servicos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PublicacoesRoute = PublicacoesRouteImport.update({
-  id: '/publicacoes',
-  path: '/publicacoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosRoute = ProjetosRouteImport.update({
-  id: '/projetos',
-  path: '/projetos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PesquisaRoute = PesquisaRouteImport.update({
-  id: '/pesquisa',
-  path: '/pesquisa',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -53,9 +29,39 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PesquisaRoute = PesquisaRouteImport.update({
+  id: '/pesquisa',
+  path: '/pesquisa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacoesRoute = PublicacoesRouteImport.update({
+  id: '/publicacoes',
+  path: '/publicacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TecnologiasRoute = TecnologiasRouteImport.update({
+  id: '/tecnologias',
+  path: '/tecnologias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TexgeneraRoute = TexgeneraRouteImport.update({
+  id: '/texgenera',
+  path: '/texgenera',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
+  '/texgenera': typeof TexgeneraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
+  '/texgenera': typeof TexgeneraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/servicos': typeof ServicosRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
+  '/texgenera': typeof TexgeneraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre'
     | '/tecnologias'
+    | '/texgenera'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre'
     | '/tecnologias'
+    | '/texgenera'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre'
     | '/tecnologias'
+    | '/texgenera'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,50 +144,16 @@ export interface RootRouteChildren {
   ServicosRoute: typeof ServicosRoute
   SobreRoute: typeof SobreRoute
   TecnologiasRoute: typeof TecnologiasRoute
+  TexgeneraRoute: typeof TexgeneraRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tecnologias': {
-      id: '/tecnologias'
-      path: '/tecnologias'
-      fullPath: '/tecnologias'
-      preLoaderRoute: typeof TecnologiasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/servicos': {
-      id: '/servicos'
-      path: '/servicos'
-      fullPath: '/servicos'
-      preLoaderRoute: typeof ServicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/publicacoes': {
-      id: '/publicacoes'
-      path: '/publicacoes'
-      fullPath: '/publicacoes'
-      preLoaderRoute: typeof PublicacoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos': {
-      id: '/projetos'
-      path: '/projetos'
-      fullPath: '/projetos'
-      preLoaderRoute: typeof ProjetosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pesquisa': {
-      id: '/pesquisa'
-      path: '/pesquisa'
-      fullPath: '/pesquisa'
-      preLoaderRoute: typeof PesquisaRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -185,11 +163,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/pesquisa': {
+      id: '/pesquisa'
+      path: '/pesquisa'
+      fullPath: '/pesquisa'
+      preLoaderRoute: typeof PesquisaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicacoes': {
+      id: '/publicacoes'
+      path: '/publicacoes'
+      fullPath: '/publicacoes'
+      preLoaderRoute: typeof PublicacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tecnologias': {
+      id: '/tecnologias'
+      path: '/tecnologias'
+      fullPath: '/tecnologias'
+      preLoaderRoute: typeof TecnologiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/texgenera': {
+      id: '/texgenera'
+      path: '/texgenera'
+      fullPath: '/texgenera'
+      preLoaderRoute: typeof TexgeneraRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicosRoute: ServicosRoute,
   SobreRoute: SobreRoute,
   TecnologiasRoute: TecnologiasRoute,
+  TexgeneraRoute: TexgeneraRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
