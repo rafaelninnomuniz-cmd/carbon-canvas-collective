@@ -1,3 +1,4 @@
+import { useLang } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ExternalLink, FileText, BookOpen, Sparkles, GraduationCap, Handshake, ArrowRight } from "lucide-react";
 import bgLibrary from "@/assets/bg-library.jpg";
@@ -23,93 +24,97 @@ type Pub = {
   abstract?: string;
 };
 
-const publications: Pub[] = [
-  {
-    title: "Optimized hybrid neural hierarchical interpolation time series with STL for flow forecasting in hydroelectric power plants",
-    venue: "Nature — Scientific Reports",
-    year: "2026",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/399655721",
-    abstract: "Framework híbrido integrando STL com NHITS para previsão de níveis de reservatório em usinas hidrelétricas, com foco em segurança operacional e gestão sustentável da água.",
-  },
-  {
-    title: "Time series forecasting based on multi-criteria optimization for model and filter selection applied to hydroelectric power plants",
-    venue: "Energy",
-    year: "2025",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/395890751",
-    abstract: "Otimização multicritério para seleção de modelos e filtros em previsão de séries temporais aplicadas a sistemas hidrelétricos.",
-  },
-  {
-    title: "Hybrid CF-CNN-BiLSTM hypertuned by Bayesian optimization for thermal power generation and decarbonization forecasting",
-    venue: "International Journal of Electrical Power & Energy Systems",
-    year: "2025",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/396561066",
-  },
-  {
-    title: "State-of-the-Art Decarbonization in Sludge Thermal Treatments for Electrical Power Generation Considering Sensors and the Application of Artificial Intelligence",
-    venue: "Water",
-    year: "2025",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/393204337",
-    abstract: "Estratégias de descarbonização em tratamentos térmicos de lodo, integrando sensores e inteligência artificial para recuperação energética sustentável.",
-  },
-  {
-    title: "Hybrid group method of data handling for time-series forecasting of thermal generation dispatch in electrical power systems",
-    venue: "Electrical Engineering",
-    year: "2025",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/393125726",
-  },
-  {
-    title: "Time Series Forecasting of Natural Inflow in Hydroelectric Power Plants Using Hyper-Tuned Temporal Fusion Transformer With Hodrick–Prescott Filter",
-    venue: "IET Generation, Transmission & Distribution",
-    year: "2025",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/391450276",
-  },
-  {
-    title: "Time Series Forecasting of Thermal Systems Dispatch in Legal Amazon Using Machine Learning",
-    venue: "Applied Sciences",
-    year: "2024",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/385308347",
-    abstract: "Métodos de ensemble (bagging, boosting, stacking) aplicados ao consumo de diesel e despacho térmico na Amazônia Legal.",
-  },
-  {
-    title: "Wavelet CNN-LSTM time series forecasting of electricity power generation considering biomass thermal systems",
-    venue: "IET Generation, Transmission & Distribution",
-    year: "2024",
-    type: "Artigo",
-    url: "https://www.researchgate.net/publication/384928332",
-    abstract: "Modelo wavelet CNN-LSTM para previsão de geração elétrica baseada em sistemas térmicos de biomassa.",
-  },
-  {
-    title: "Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético",
-    venue: "UFPA — Programa de Pós-Graduação em Engenharia Elétrica",
-    year: "2021",
-    type: "Tese",
-    url: "https://www.researchgate.net/profile/Rafael-Muniz",
-    abstract: "Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.",
-  },
-  {
-    title: "Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia",
-    venue: "UFPA — Engenharia Elétrica · Fontes Renováveis",
-    year: "2016",
-    type: "Dissertação",
-    url: "https://www.researchgate.net/profile/Rafael-Muniz",
-    abstract: "Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.",
-  },
-];
 
-const stats = [
-  { k: "70+", v: "Publicações" },
-  { k: "13.7k+", v: "Leituras" },
-  { k: "305", v: "Citações" },
-];
+
+
 
 export default function PublicationsPage() {
+  const { t } = useLang();
+  const publications: Pub[] = [
+    {
+      title: "Optimized hybrid neural hierarchical interpolation time series with STL for flow forecasting in hydroelectric power plants",
+      venue: "Nature — Scientific Reports",
+      year: "2026",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/399655721",
+      abstract: t("Framework híbrido integrando STL com NHITS para previsão de níveis de reservatório em usinas hidrelétricas, com foco em segurança operacional e gestão sustentável da água.", "A hybrid framework integrating STL with NHITS to forecast reservoir levels at hydroelectric power plants, focusing on operational safety and sustainable water management."),
+    },
+    {
+      title: "Time series forecasting based on multi-criteria optimization for model and filter selection applied to hydroelectric power plants",
+      venue: "Energy",
+      year: "2025",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/395890751",
+      abstract: t("Otimização multicritério para seleção de modelos e filtros em previsão de séries temporais aplicadas a sistemas hidrelétricos.", "Multi-criteria optimization for selecting models and filters in time-series forecasting for hydropower systems."),
+    },
+    {
+      title: "Hybrid CF-CNN-BiLSTM hypertuned by Bayesian optimization for thermal power generation and decarbonization forecasting",
+      venue: "International Journal of Electrical Power & Energy Systems",
+      year: "2025",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/396561066",
+    },
+    {
+      title: "State-of-the-Art Decarbonization in Sludge Thermal Treatments for Electrical Power Generation Considering Sensors and the Application of Artificial Intelligence",
+      venue: "Water",
+      year: "2025",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/393204337",
+      abstract: t("Estratégias de descarbonização em tratamentos térmicos de lodo, integrando sensores e inteligência artificial para recuperação energética sustentável.", "Decarbonization strategies for thermal sludge treatment, integrating sensors and artificial intelligence for sustainable energy recovery."),
+    },
+    {
+      title: "Hybrid group method of data handling for time-series forecasting of thermal generation dispatch in electrical power systems",
+      venue: "Electrical Engineering",
+      year: "2025",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/393125726",
+    },
+    {
+      title: "Time Series Forecasting of Natural Inflow in Hydroelectric Power Plants Using Hyper-Tuned Temporal Fusion Transformer With Hodrick–Prescott Filter",
+      venue: "IET Generation, Transmission & Distribution",
+      year: "2025",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/391450276",
+    },
+    {
+      title: "Time Series Forecasting of Thermal Systems Dispatch in Legal Amazon Using Machine Learning",
+      venue: "Applied Sciences",
+      year: "2024",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/385308347",
+      abstract: t("Métodos de ensemble (bagging, boosting, stacking) aplicados ao consumo de diesel e despacho térmico na Amazônia Legal.", "Ensemble methods (bagging, boosting, stacking) applied to diesel consumption and thermal generation dispatch in Brazil’s Legal Amazon."),
+    },
+    {
+      title: "Wavelet CNN-LSTM time series forecasting of electricity power generation considering biomass thermal systems",
+      venue: "IET Generation, Transmission & Distribution",
+      year: "2024",
+      type: "Artigo",
+      url: "https://www.researchgate.net/publication/384928332",
+      abstract: t("Modelo wavelet CNN-LSTM para previsão de geração elétrica baseada em sistemas térmicos de biomassa.", "A wavelet CNN-LSTM model for forecasting electricity generation from biomass thermal systems."),
+    },
+    {
+      title: "Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético",
+      venue: t("UFPA — Programa de Pós-Graduação em Engenharia Elétrica", "UFPA — Graduate Program in Electrical Engineering"),
+      year: "2021",
+      type: "Tese",
+      url: "https://www.researchgate.net/profile/Rafael-Muniz",
+      abstract: t("Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.", "A doctoral thesis defended at Universidade Federal do Pará, proposing energy sustainability indicators and intelligent systems to support decision-making in planning Brazil’s electricity mix."),
+    },
+    {
+      title: "Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia",
+      venue: t("UFPA — Engenharia Elétrica · Fontes Renováveis", "UFPA — Electrical Engineering · Renewable Energy"),
+      year: "2016",
+      type: "Dissertação",
+      url: "https://www.researchgate.net/profile/Rafael-Muniz",
+      abstract: t("Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.", "A master’s dissertation defended at Universidade Federal do Pará exploring renewable energy alternatives for isolated Amazonian communities, focusing on residual biomass gasification."),
+    },
+  ];
+
+  const stats = [
+    { k: "70+", v: t("Publicações", "Publications") },
+    { k: "13.7k+", v: t("Leituras", "Reads") },
+    { k: "305", v: t("Citações", "Citations") },
+  ];
   return (
     <section className="relative mx-auto max-w-6xl px-6 py-20">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -124,14 +129,12 @@ export default function PublicationsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       </div>
       <div className="max-w-3xl">
-        <span className="text-xs font-mono uppercase tracking-widest text-primary">Publicações</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Publicações", "Publications")}</span>
         <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-          Pesquisa publicada na fronteira de <span className="text-gradient">energia, resíduos e IA</span>.
+          {t("Pesquisa publicada na fronteira de", "Published research at the frontier of")} <span className="text-gradient">{t("energia, resíduos e IA", "energy, waste, and AI")}</span>.
         </h1>
         <p className="mt-5 text-muted-foreground">
-          Seleção de publicações em periódicos internacionais e nacional, com foco em
-          tratamento térmico de resíduos, sistemas energéticos, modelagem fuzzy e
-          aprendizado de máquina aplicado a sistemas elétricos.
+          {t("Seleção de publicações em periódicos internacionais e nacional, com foco em tratamento térmico de resíduos, sistemas energéticos, modelagem fuzzy e aprendizado de máquina aplicado a sistemas elétricos.", "Selected publications in international and national journals, focusing on thermal waste treatment, energy systems, fuzzy modeling, and machine learning applied to power systems.")}
         </p>
       </div>
 
@@ -152,7 +155,7 @@ export default function PublicationsPage() {
           className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition"
         >
           <BookOpen className="h-4 w-4" />
-          Ver perfil completo no ResearchGate
+          {t("Ver perfil completo no ResearchGate", "View full profile on ResearchGate")}
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </div>
@@ -184,7 +187,7 @@ export default function PublicationsPage() {
                         : p.type === "Tese" || p.type === "Dissertação"
                         ? <GraduationCap className="h-3 w-3" />
                         : <Sparkles className="h-3 w-3" />}
-                      {p.type}
+                      {t(p.type, ({ Artigo: "Article", Tese: "Doctoral thesis", Dissertação: "Master’s dissertation", Capítulo: "Chapter", Nacional: "National publication" })[p.type])}
                     </span>
                     <span className="text-xs font-mono text-muted-foreground">{p.year}</span>
                     {p.venue && (
@@ -198,7 +201,7 @@ export default function PublicationsPage() {
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.abstract}</p>
                   )}
                   <div className="mt-3 inline-flex items-center gap-1 text-xs text-primary/80 group-hover:text-primary">
-                    Ler no ResearchGate <ExternalLink className="h-3 w-3" />
+                    {t("Ler no ResearchGate", "Read on ResearchGate")} <ExternalLink className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -208,9 +211,9 @@ export default function PublicationsPage() {
       </ol>
 
       <p className="mt-10 text-sm text-muted-foreground">
-        Lista parcial. Acesse o{" "}
+        {t("Lista parcial. Acesse o", "Partial list. Visit the")}{" "}
         <a className="text-primary hover:underline" href="https://www.researchgate.net/profile/Rafael-Muniz" target="_blank" rel="noopener noreferrer">
-          perfil no ResearchGate
+          {t("perfil no ResearchGate", "ResearchGate profile")}
         </a>{" "}
         para a bibliografia completa.
       </p>
@@ -222,12 +225,9 @@ export default function PublicationsPage() {
               <Handshake className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="font-display text-2xl font-semibold">É pesquisador? Vamos publicar juntos.</h3>
+              <h3 className="font-display text-2xl font-semibold">{t("É pesquisador? Vamos publicar juntos.", "Are you a researcher? Let’s publish together.")}</h3>
               <p className="mt-2 text-muted-foreground">
-                Estou aberto a colaborações em pesquisa e coautoria de publicações nas áreas
-                de saneamento energético, tecnologias termoquímicas, materiais de carbono,
-                IA aplicada e sistemas energéticos sustentáveis. Vamos transformar boas
-                hipóteses em ciência publicada.
+                {t("Estou aberto a colaborações em pesquisa e coautoria de publicações nas áreas de saneamento energético, tecnologias termoquímicas, materiais de carbono, IA aplicada e sistemas energéticos sustentáveis. Vamos transformar boas hipóteses em ciência publicada.", "I welcome research collaborations and co-authored publications in energy recovery from wastewater, thermochemical technologies, carbon materials, applied AI, and sustainable energy systems. Let’s turn promising hypotheses into published science.")}
               </p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function PublicationsPage() {
             to="/contato"
             className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-[var(--shadow-glow)]"
           >
-            Propor colaboração <ArrowRight className="h-4 w-4" />
+            {t("Propor colaboração", "Propose a collaboration")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useLang } from "@/lib/i18n";
 import { Youtube, Linkedin, Instagram, BookOpen, ExternalLink } from "lucide-react";
 import portrait from "@/assets/portrait.jpg";
 
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/sobre")({
 });
 
 function AboutPage() {
+  const { t } = useLang();
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
@@ -24,7 +26,7 @@ function AboutPage() {
           <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background">
             <img
               src={portrait}
-              alt="Retrato de Rafael Muniz em planta industrial de pirólise"
+              alt=t("Retrato de Rafael Muniz em planta industrial de pirólise", "Portrait of Rafael Muniz at an industrial pyrolysis plant")
               width={1024}
               height={1280}
               loading="lazy"
@@ -34,47 +36,38 @@ function AboutPage() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-widest text-foreground/80">
               <span>Rafael N. Muniz</span>
-              <span className="text-primary">PhD · Eng.</span>
+              <span className="text-primary">{t("PhD · Eng.", "PhD · Engineer")}</span>
             </div>
           </div>
         </div>
         <div>
-          <span className="text-xs font-mono uppercase tracking-widest text-primary">Sobre</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Sobre", "About")}</span>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-            Engenharia disruptiva a serviço da <span className="text-gradient">descarbonização</span>.
+            {t("Engenharia disruptiva a serviço da", "Disruptive engineering in the service of")} <span className="text-gradient">{t("descarbonização", "decarbonization")}</span>.
           </h1>
           <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
             <p>
-              Sou <strong className="text-foreground">Rafael Ninno Muniz</strong> — Engenheiro
-              com Pós-doutorado em Termoquímica, Doutor em Sustentabilidade Energética, Mestre
-              em Fontes Renováveis de Energia e Bacharel em Engenharia Elétrica.
+              {t("Sou", "I am")} <strong className="text-foreground">Rafael Ninno Muniz</strong> {t("— Engenheiro com Pós-doutorado em Termoquímica, Doutor em Sustentabilidade Energética, Mestre em Fontes Renováveis de Energia e Bacharel em Engenharia Elétrica.", "— an engineer with postdoctoral research in Thermochemistry, a PhD in Energy Sustainability, a master's degree in Renewable Energy Sources, and a bachelor's degree in Electrical Engineering.")}
             </p>
             <p>
-              Atuo na fronteira entre <strong className="text-foreground">saneamento energético</strong>,
-              tecnologias termoquímicas (pirólise e gaseificação) e bioquímica (biodigestão) para
-              o tratamento de resíduos — transformando lodo de ETE, biomassas e resíduos
-              industriais em biochar, syngas, biogás e carbonos precursores de alto valor
-              agregado, incluindo grafeno.
+              {t("Atuo na fronteira entre", "I work at the intersection of")} <strong className="text-foreground">{t("saneamento energético", "waste-to-energy solutions")}</strong>{t(", tecnologias termoquímicas (pirólise e gaseificação) e bioquímica (biodigestão) para o tratamento de resíduos — transformando lodo de ETE, biomassas e resíduos industriais em biochar, syngas, biogás e carbonos precursores de alto valor agregado, incluindo grafeno.", ", thermochemical technologies (pyrolysis and gasification), and biochemical treatment (anaerobic digestion) for waste processing — transforming wastewater sludge, biomass, and industrial waste into biochar, syngas, biogas, and high-value carbon precursors, including graphene.")}
             </p>
             <p>
-              Lidero iniciativas de PD&I para descarbonização da matriz energética como
-              <strong className="text-foreground"> CTO da TexGenera</strong> (regeneração de têxteis em grafeno),
-              <strong className="text-foreground"> Diretor de Tecnologias na LightFy Energia</strong>,
-              <strong className="text-foreground"> CEO da E-Fuzzy</strong> (sistemas inteligentes para
-              descarbonização industrial), integrando ciência de bancada, modelagem de negócios,
-              IA e viabilidade industrial.
+              {t("Lidero iniciativas de PD&I para descarbonização da matriz energética como", "I lead R&D&I initiatives to decarbonize the energy mix as")}
+              <strong className="text-foreground"> {t("CTO da TexGenera", "CTO of TexGenera")}</strong> {t("(regeneração de têxteis em grafeno),", "(regenerating textiles into graphene),")}
+              <strong className="text-foreground"> {t("Diretor de Tecnologias na LightFy Energia", "Director of Technology at LightFy Energia")}</strong>,
+              <strong className="text-foreground"> {t("CEO da E-Fuzzy", "CEO of E-Fuzzy")}</strong> {t("(sistemas inteligentes para descarbonização industrial), integrando ciência de bancada, modelagem de negócios, IA e viabilidade industrial.", "(intelligent systems for industrial decarbonization), integrating laboratory science, business modeling, AI, and industrial feasibility.")}
             </p>
             <p>
-              Como educador, contribuo na formação de engenheiros e pesquisadores que constroem
-              o próximo ciclo da economia de baixo carbono.
+              {t("Como educador, contribuo na formação de engenheiros e pesquisadores que constroem o próximo ciclo da economia de baixo carbono.", "As an educator, I help train the engineers and researchers building the next chapter of the low-carbon economy.")}
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { k: "70+", v: "consultorias executadas" },
-              { k: "100+", v: "publicações científicas" },
-              { k: "13.7k+", v: "leituras e citações no ResearchGate" },
+              { k: "70+", v: t("consultorias executadas", "consulting engagements completed") },
+              { k: "100+", v: t("publicações científicas", "scientific publications") },
+              { k: "13.7k+", v: t("leituras e citações no ResearchGate", "reads and citations on ResearchGate") },
             ].map((s) => (
               <div key={s.v} className="rounded-xl border border-border/60 bg-card/50 p-5">
                 <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>
@@ -84,13 +77,13 @@ function AboutPage() {
           </div>
 
           <div className="mt-10">
-            <h2 className="font-display text-xl font-semibold">Formação Acadêmica</h2>
+            <h2 className="font-display text-xl font-semibold">{t("Formação Acadêmica", "Academic Background")}</h2>
             <ul className="mt-4 space-y-4 text-sm">
               {[
-                { t: "Pós-Doutorado em Eng. de Produção e Sistemas Computacionais", i: "Universidade Federal Fluminense (UFF)", d: "Otimização de usinas de pirólise via lógica fuzzy" },
-                { t: "Doutorado em Engenharia Elétrica", i: "Universidade Federal do Pará (UFPA)", d: "Indicadores de sustentabilidade energética e sistemas inteligentes" },
-                { t: "Mestrado em Engenharia Elétrica — Fontes Renováveis", i: "UFPA", d: "Soluções sustentáveis para sistemas isolados da Amazônia" },
-                { t: "Bacharel em Engenharia Elétrica — Sistemas de Energia", i: "UFPA", d: "Gaseificação de biomassa residual em comunidades isoladas" },
+                { t: t("Pós-Doutorado em Eng. de Produção e Sistemas Computacionais", "Postdoctoral Research in Production Engineering and Computational Systems"), i: "Universidade Federal Fluminense (UFF)", d: t("Otimização de usinas de pirólise via lógica fuzzy", "Optimization of pyrolysis plants using fuzzy logic") },
+                { t: t("Doutorado em Engenharia Elétrica", "PhD in Electrical Engineering"), i: "Universidade Federal do Pará (UFPA)", d: t("Indicadores de sustentabilidade energética e sistemas inteligentes", "Energy sustainability indicators and intelligent systems") },
+                { t: t("Mestrado em Engenharia Elétrica — Fontes Renováveis", "Master's in Electrical Engineering — Renewable Energy Sources"), i: "UFPA", d: t("Soluções sustentáveis para sistemas isolados da Amazônia", "Sustainable solutions for isolated energy systems in the Amazon") },
+                { t: t("Bacharel em Engenharia Elétrica — Sistemas de Energia", "Bachelor's in Electrical Engineering — Power Systems"), i: "UFPA", d: t("Gaseificação de biomassa residual em comunidades isoladas", "Gasification of residual biomass in isolated communities") },
               ].map((f) => (
                 <li key={f.t} className="rounded-lg border border-border/60 bg-card/40 p-4">
                   <div className="font-display font-semibold text-foreground">{f.t}</div>
@@ -102,13 +95,13 @@ function AboutPage() {
           </div>
 
           <div className="mt-10">
-            <h2 className="font-display text-xl font-semibold">Competências</h2>
+            <h2 className="font-display text-xl font-semibold">{t("Competências", "Expertise")}</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {[
-                "Pirólise", "Gaseificação", "Biodigestão", "Saneamento Energético",
-                "Biochar & Carbonos Precursores", "Síntese de Grafeno", "Mercados de Carbono",
-                "Lógica Fuzzy", "Machine Learning", "Modelagem de Sistemas Energéticos",
-                "P&D Industrial", "Gestão de Projetos", "Docência", "Transferência de Tecnologia",
+                t("Pirólise", "Pyrolysis"), t("Gaseificação", "Gasification"), t("Biodigestão", "Anaerobic Digestion"), t("Saneamento Energético", "Waste-to-Energy"),
+                t("Biochar & Carbonos Precursores", "Biochar & Carbon Precursors"), t("Síntese de Grafeno", "Graphene Synthesis"), t("Mercados de Carbono", "Carbon Markets"),
+                t("Lógica Fuzzy", "Fuzzy Logic"), "Machine Learning", t("Modelagem de Sistemas Energéticos", "Energy Systems Modeling"),
+                t("P&D Industrial", "Industrial R&D"), t("Gestão de Projetos", "Project Management"), t("Docência", "Teaching"), t("Transferência de Tecnologia", "Technology Transfer"),
               ].map((t) => (
                 <span key={t} className="rounded-full border border-border bg-secondary/40 px-3 py-1 text-xs text-foreground">
                   {t}
@@ -118,11 +111,9 @@ function AboutPage() {
           </div>
 
           <div className="mt-10">
-            <h2 className="font-display text-xl font-semibold">Redes Sociais</h2>
+            <h2 className="font-display text-xl font-semibold">{t("Redes Sociais", "Social Media")}</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Acompanhe meus conteúdos, projetos e pesquisas — com destaque para o
-              canal no YouTube, onde compartilho bastidores de tecnologia, ciência
-              aplicada e descarbonização industrial.
+              {t("Acompanhe meus conteúdos, projetos e pesquisas — com destaque para o canal no YouTube, onde compartilho bastidores de tecnologia, ciência aplicada e descarbonização industrial.", "Follow my content, projects, and research — especially on my YouTube channel, where I share behind-the-scenes insights into technology, applied science, and industrial decarbonization.")}
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <a
@@ -135,7 +126,7 @@ function AboutPage() {
                   <Youtube className="h-6 w-6" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-primary">Canal em destaque</div>
+                  <div className="text-[11px] font-mono uppercase tracking-widest text-primary">{t("Canal em destaque", "Featured Channel")}</div>
                   <div className="font-display text-lg font-semibold">YouTube · @ninnomuniz</div>
                   <div className="text-xs text-muted-foreground truncate">youtube.com/@ninnomuniz</div>
                 </div>

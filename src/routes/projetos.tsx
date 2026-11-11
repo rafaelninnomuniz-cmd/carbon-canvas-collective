@@ -1,3 +1,4 @@
+import { useLang } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Atom, Cog, Recycle, Zap, Handshake, Youtube } from "lucide-react";
 import bgProjetos from "@/assets/bg-projetos.jpg";
@@ -14,65 +15,67 @@ export const Route = createFileRoute("/projetos")({
   component: ProjectsPage,
 });
 
-const projects = [
-  {
-    n: "01",
-    icon: Atom,
-    tag: "Materiais Avançados",
-    title: "Projeto Grafeno",
-    subtitle: "Conversão de resíduos têxteis em carbonos precursores e grafeno.",
-    text: "Desenvolvimento de rota tecnológica para escala de planta piloto a industrial de óxido de grafeno e derivados de carbono a partir de subprodutos têxteis. Inclui validação de funcionalidade e caracterização estrutural dos materiais obtidos.",
-    bullets: [
-      "Escalonamento de planta piloto para escala industrial",
-      "Valorização de resíduos têxteis industriais",
-      "Validação de funcionalidade e caracterização",
-    ],
-    org: "Projeto da TexGenera, da qual sou CTO, em parceria com o ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica).",
-  },
-  {
-    n: "02",
-    icon: Cog,
-    tag: "Catálise Automotiva",
-    title: "Projeto Smart Materials",
-    subtitle: "Aplicação de carbono precursor em catalisadores automotivos.",
-    text: "Aproveitamento de subprodutos têxteis para produção de suportes carbonáceos de alto desempenho aplicados a catalisadores automotivos, substituindo materiais convencionais por insumos de origem circular.",
-    bullets: [
-      "Suportes carbonáceos para catalisadores",
-      "Substituição de insumos convencionais",
-      "Cadeia circular têxtil → automotivo",
-    ],
-    org: "Projeto da TexGenera em parceria com o SENAI ISI Eletroquímica.",
-  },
-  {
-    n: "03",
-    icon: Recycle,
-    tag: "Saneamento + Solo",
-    title: "Projeto Retransformar",
-    subtitle: "Pirólise de lodo de ETE para conversão em biochar agregado de nutrientes.",
-    text: "Usina de pirólise em escala industrial para tratamento de lodo sanitário em Niterói (RJ), produzindo biochar enriquecido com nutrientes para recuperação de solos degradados. Projeto executado pela UFF (Universidade Federal Fluminense) através do LEI (Laboratório de Empreendimentos Inovadores).",
-    bullets: [
-      "Pirólise de lodo de ETE em escala industrial",
-      "Biochar agregado de nutrientes",
-      "Execução: UFF através do LEI",
-    ],
-  },
-  {
-    n: "04",
-    icon: Zap,
-    tag: "Energia + Data Centers",
-    title: "Projeto UPC + BESS",
-    subtitle: "Gerador híbrido multicombustível para aplicação conjunta com BESS em Data Centers Urbanos.",
-    text: "Unidade de Potência Compacta (UPC) multicombustível integrada a sistemas de armazenamento por baterias (BESS), projetada para garantir confiabilidade, descarbonização e flexibilidade energética em Data Centers urbanos.",
-    bullets: [
-      "Geração híbrida modular",
-      "Integração com armazenamento BESS",
-      "Aplicação dedicada a Data Centers urbanos",
-    ],
-    org: "Projeto conjunto da empresa Insight Energy com a startup LightFy Energia.",
-  },
-];
+
 
 function ProjectsPage() {
+  const { t } = useLang();
+  const projects = [
+    {
+      n: "01",
+      icon: Atom,
+      tag: t("Materiais Avançados", "Advanced Materials"),
+      title: t("Projeto Grafeno", "Graphene Project"),
+      subtitle: t("Conversão de resíduos têxteis em carbonos precursores e grafeno.", "Converting textile waste into carbon precursors and graphene."),
+      text: t("Desenvolvimento de rota tecnológica para escala de planta piloto a industrial de óxido de grafeno e derivados de carbono a partir de subprodutos têxteis. Inclui validação de funcionalidade e caracterização estrutural dos materiais obtidos.", "Developing a technological pathway from pilot plant to industrial-scale production of graphene oxide and carbon derivatives from textile by-products. Includes functional validation and structural characterization of the resulting materials."),
+      bullets: [
+        t("Escalonamento de planta piloto para escala industrial", "Scaling from pilot plant to industrial production"),
+        t("Valorização de resíduos têxteis industriais", "Valorization of industrial textile waste"),
+        t("Validação de funcionalidade e caracterização", "Functional validation and characterization"),
+      ],
+      org: t("Projeto da TexGenera, da qual sou CTO, em parceria com o ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica).", "A TexGenera project, where I serve as CTO, in partnership with ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica)."),
+    },
+    {
+      n: "02",
+      icon: Cog,
+      tag: t("Catálise Automotiva", "Automotive Catalysis"),
+      title: t("Projeto Smart Materials", "Smart Materials Project"),
+      subtitle: t("Aplicação de carbono precursor em catalisadores automotivos.", "Applying carbon precursors in automotive catalysts."),
+      text: t("Aproveitamento de subprodutos têxteis para produção de suportes carbonáceos de alto desempenho aplicados a catalisadores automotivos, substituindo materiais convencionais por insumos de origem circular.", "Using textile by-products to produce high-performance carbon supports for automotive catalysts, replacing conventional materials with circular inputs."),
+      bullets: [
+        t("Suportes carbonáceos para catalisadores", "Carbon supports for catalysts"),
+        t("Substituição de insumos convencionais", "Replacing conventional inputs"),
+        t("Cadeia circular têxtil → automotivo", "Circular textile-to-automotive value chain"),
+      ],
+      org: t("Projeto da TexGenera em parceria com o SENAI ISI Eletroquímica.", "A TexGenera project in partnership with SENAI ISI Eletroquímica."),
+    },
+    {
+      n: "03",
+      icon: Recycle,
+      tag: t("Saneamento + Solo", "Sanitation + Soil"),
+      title: t("Projeto Retransformar", "Retransformar Project"),
+      subtitle: t("Pirólise de lodo de ETE para conversão em biochar agregado de nutrientes.", "Pyrolysis of wastewater treatment sludge to produce nutrient-enriched biochar."),
+      text: t("Usina de pirólise em escala industrial para tratamento de lodo sanitário em Niterói (RJ), produzindo biochar enriquecido com nutrientes para recuperação de solos degradados. Projeto executado pela UFF (Universidade Federal Fluminense) através do LEI (Laboratório de Empreendimentos Inovadores).", "An industrial-scale pyrolysis plant for treating sewage sludge in Niterói (RJ), producing nutrient-enriched biochar to restore degraded soils. Implemented by UFF (Universidade Federal Fluminense) through LEI (Laboratório de Empreendimentos Inovadores)."),
+      bullets: [
+        t("Pirólise de lodo de ETE em escala industrial", "Industrial-scale pyrolysis of wastewater treatment sludge"),
+        t("Biochar agregado de nutrientes", "Nutrient-enriched biochar"),
+        t("Execução: UFF através do LEI", "Implementation: UFF through LEI"),
+      ],
+    },
+    {
+      n: "04",
+      icon: Zap,
+      tag: t("Energia + Data Centers", "Energy + Data Centers"),
+      title: t("Projeto UPC + BESS", "UPC + BESS Project"),
+      subtitle: t("Gerador híbrido multicombustível para aplicação conjunta com BESS em Data Centers Urbanos.", "A multi-fuel hybrid generator for use with BESS in urban data centers."),
+      text: t("Unidade de Potência Compacta (UPC) multicombustível integrada a sistemas de armazenamento por baterias (BESS), projetada para garantir confiabilidade, descarbonização e flexibilidade energética em Data Centers urbanos.", "A multi-fuel Compact Power Unit (UPC) integrated with battery energy storage systems (BESS), designed to ensure reliability, decarbonization, and energy flexibility in urban data centers."),
+      bullets: [
+        t("Geração híbrida modular", "Modular hybrid generation"),
+        t("Integração com armazenamento BESS", "Integration with BESS storage"),
+        t("Aplicação dedicada a Data Centers urbanos", "Dedicated application for urban data centers"),
+      ],
+      org: t("Projeto conjunto da empresa Insight Energy com a startup LightFy Energia.", "A joint project by Insight Energy and the startup LightFy Energia."),
+    },
+  ];
   return (
     <>
       <div
@@ -86,14 +89,12 @@ function ProjectsPage() {
       />
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-3xl">
-          <span className="text-xs font-mono uppercase tracking-widest text-primary">Projetos</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Projetos", "Projects")}</span>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-            Principais projetos <span className="text-gradient">em execução</span>.
+            {t("Principais projetos", "Key projects")} <span className="text-gradient">{t("em execução", "underway")}</span>.
           </h1>
           <p className="mt-5 text-muted-foreground">
-            Uma seleção dos projetos atualmente em andamento no portfólio — há
-            diversos outros em curso, em diferentes estágios de maturidade
-            tecnológica, da bancada à escala industrial.
+            {t("Uma seleção dos projetos atualmente em andamento no portfólio — há diversos outros em curso, em diferentes estágios de maturidade tecnológica, da bancada à escala industrial.", "A selection of projects currently underway in the portfolio — many others are in progress at different stages of technological maturity, from the laboratory to industrial scale.")}
           </p>
         </div>
 
@@ -135,13 +136,12 @@ function ProjectsPage() {
 
         <div className="mt-20">
           <div className="max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-primary">Em vídeo</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Em vídeo", "On video")}</span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">
-              Os projetos <span className="text-gradient">em movimento</span>.
+              {t("Os projetos", "Projects")} <span className="text-gradient">{t("em movimento", "in action")}</span>.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Conteúdos do canal mostrando bastidores, aplicações e os avanços
-              tecnológicos por trás dos projetos em execução.
+              {t("Conteúdos do canal mostrando bastidores, aplicações e os avanços tecnológicos por trás dos projetos em execução.", "Videos from the channel showcasing behind-the-scenes work, applications, and technological advances behind ongoing projects.")}
             </p>
             <a
               href="https://www.youtube.com/@ninnomuniz"
@@ -150,7 +150,7 @@ function ProjectsPage() {
               className="mt-4 inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition"
             >
               <Youtube className="h-4 w-4" />
-              Visitar canal @ninnomuniz
+              {t("Visitar canal @ninnomuniz", "Visit the @ninnomuniz channel")}
             </a>
           </div>
 
@@ -158,26 +158,26 @@ function ProjectsPage() {
             {[
               {
                 id: "DlPOobvVL-0",
-                title: "Saneamento energético e biochar",
-                desc: "Como o lodo de ETE deixa de ser passivo ambiental e vira insumo agronômico via pirólise — base do Projeto Retransformar.",
+                title: t("Saneamento energético e biochar", "Energy recovery from wastewater and biochar"),
+                desc: t("Como o lodo de ETE deixa de ser passivo ambiental e vira insumo agronômico via pirólise — base do Projeto Retransformar.", "How wastewater treatment sludge becomes an agricultural input rather than an environmental liability through pyrolysis — the foundation of the Retransformar Project."),
                 short: false,
               },
               {
                 id: "wl2DjdbPV5A",
-                title: "Tecnologias termoquímicas em ação",
-                desc: "Visão prática sobre rotas termoquímicas aplicadas ao tratamento de resíduos e geração de materiais carbonáceos de valor agregado.",
+                title: t("Tecnologias termoquímicas em ação", "Thermochemical technologies in action"),
+                desc: t("Visão prática sobre rotas termoquímicas aplicadas ao tratamento de resíduos e geração de materiais carbonáceos de valor agregado.", "A practical look at thermochemical pathways for waste treatment and the production of value-added carbon materials."),
                 short: false,
               },
               {
                 id: "dDKnNfrhw_Q",
-                title: "Gás de Síntese de Pirólise",
-                desc: "Veja o gás gerado pela pirólise da madeira em ação.",
+                title: t("Gás de Síntese de Pirólise", "Pyrolysis Syngas"),
+                desc: t("Veja o gás gerado pela pirólise da madeira em ação.", "See the gas produced by wood pyrolysis in action."),
                 short: true,
               },
               {
                 id: "hHA5WNyTAOo",
-                title: "Energia, IA e descarbonização",
-                desc: "Recorte direto sobre a integração entre tecnologias energéticas, inteligência artificial e a transição de baixo carbono.",
+                title: t("Energia, IA e descarbonização", "Energy, AI, and decarbonization"),
+                desc: t("Recorte direto sobre a integração entre tecnologias energéticas, inteligência artificial e a transição de baixo carbono.", "A focused look at the integration of energy technologies, artificial intelligence, and the low-carbon transition."),
                 short: true,
               },
             ].map((v) => (
@@ -204,7 +204,7 @@ function ProjectsPage() {
                     rel="noopener noreferrer"
                     className="mt-3 inline-flex items-center gap-1 text-xs text-primary hover:underline"
                   >
-                    Assistir no YouTube <ArrowRight className="h-3 w-3" />
+                    {t("Assistir no YouTube", "Watch on YouTube")} <ArrowRight className="h-3 w-3" />
                   </a>
                 </div>
               </article>
@@ -220,12 +220,10 @@ function ProjectsPage() {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-semibold">
-                  Quer conhecer os demais projetos — ou desenhar um novo em parceria?
+                  {t("Quer conhecer os demais projetos — ou desenhar um novo em parceria?", "Want to explore the other projects — or develop a new one together?")}
                 </h3>
                 <p className="mt-2 text-muted-foreground">
-                  Há um portfólio completo de iniciativas em diferentes estágios e
-                  novas oportunidades de cooperação em P&D, escalonamento industrial
-                  e desenvolvimento conjunto de tecnologias.
+                  {t("Há um portfólio completo de iniciativas em diferentes estágios e novas oportunidades de cooperação em P&D, escalonamento industrial e desenvolvimento conjunto de tecnologias.", "There is a full portfolio of initiatives at different stages, with new opportunities for cooperation in R&D, industrial scale-up, and joint technology development.")}
                 </p>
               </div>
             </div>
@@ -233,7 +231,7 @@ function ProjectsPage() {
               to="/contato"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-[var(--shadow-glow)]"
             >
-              Vamos conversar <ArrowRight className="h-4 w-4" />
+              {t("Vamos conversar", "Let’s talk")} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

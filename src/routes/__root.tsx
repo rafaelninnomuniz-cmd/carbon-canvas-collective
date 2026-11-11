@@ -1,3 +1,4 @@
+import { useLang } from "@/lib/i18n";
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import { LangProvider } from "@/lib/i18n";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -15,20 +16,21 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 function NotFoundComponent() {
+  const { t } = useLang();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-gradient">404</h1>
-        <h2 className="mt-4 text-xl font-semibold">Página não encontrada</h2>
+        <h2 className="mt-4 text-xl font-semibold">{t("Página não encontrada", "Page not found")}</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          A página que você procura não existe ou foi movida.
+          {t("A página que você procura não existe ou foi movida.", "The page you’re looking for does not exist or has moved.")}
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
           >
-            Voltar ao início
+            {t("Voltar ao início", "Back to home")}
           </Link>
         </div>
       </div>
@@ -37,23 +39,24 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
+  const { t } = useLang();
   console.error(error);
   const router = useRouter();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold">Algo deu errado</h1>
+        <h1 className="text-xl font-semibold">{t("Algo deu errado", "Something went wrong")}</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          {import.meta.env.DEV ? (error as Error).message : "Ocorreu um erro inesperado. Por favor, tente novamente."}
+          {import.meta.env.DEV ? (error as Error).message : t("Ocorreu um erro inesperado. Por favor, tente novamente.", "An unexpected error occurred. Please try again.")}
         </p>
         <div className="mt-6 flex justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
           >
-            Tentar novamente
+            {t("Tentar novamente", "Try again")}
           </button>
-          <a href="/" className="rounded-md border border-border px-4 py-2 text-sm">Início</a>
+          <a href="/" className="rounded-md border border-border px-4 py-2 text-sm">{t("Início", "Home")}</a>
         </div>
       </div>
     </div>

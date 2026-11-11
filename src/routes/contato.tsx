@@ -1,3 +1,4 @@
+import { useLang } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
@@ -14,21 +15,30 @@ export const Route = createFileRoute("/contato")({
   component: ContactPage,
 });
 
-const WHATSAPP_URL =
-  "https://wa.me/5543996926350?text=" +
-  encodeURIComponent("Olá Rafael, vim através do website!\nGostaria de maiores informações sobre seus serviços.");
-
-const SUBJECT_OPTIONS = ["Consultoria", "Palestras", "Tecnologias", "P&D", "Publicações", "Outros"];
-
 function ContactPage() {
+  const { t } = useLang();
+  const WHATSAPP_URL =
+    "https://wa.me/5543996926350?text=" +
+    encodeURIComponent(t(
+      "Olá Rafael, vim através do website!\nGostaria de maiores informações sobre seus serviços.",
+      "Hello Rafael, I found you through your website!\nI would like more information about your services.",
+    ));
+  const SUBJECT_OPTIONS = [
+    { value: "Consultoria", label: t("Consultoria", "Consulting") },
+    { value: "Palestras", label: t("Palestras", "Speaking engagements") },
+    { value: "Tecnologias", label: t("Tecnologias", "Technologies") },
+    { value: "P&D", label: t("P&D", "R&D") },
+    { value: "Publicações", label: t("Publicações", "Publications") },
+    { value: "Outros", label: t("Outros", "Other") },
+  ];
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ nome: "", email: "", assunto: "Consultoria", mensagem: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const body = `Nome: ${form.nome}\nEmail: ${form.email}\n\n${form.mensagem}`;
+    const body = `${t("Nome", "Name")}: ${form.nome}\n${t("Email", "Email")}: ${form.email}\n\n${form.mensagem}`;
     window.location.href = `mailto:rafael@ninnomuniz.com?subject=${encodeURIComponent(
-      `[${form.assunto}] Contato via website`,
+      `[${SUBJECT_OPTIONS.find((opt) => opt.value === form.assunto)?.label ?? form.assunto}] ${t("Contato via website", "Website inquiry")}`,
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
@@ -37,13 +47,12 @@ function ContactPage() {
     <section className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-2">
         <div>
-          <span className="text-xs font-mono uppercase tracking-widest text-primary">Contato</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Contato", "Contact")}</span>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-            Vamos <span className="text-gradient">conversar</span>.
+            {t("Vamos", "Let’s")} <span className="text-gradient">{t("conversar", "talk")}</span>.
           </h1>
           <p className="mt-5 text-muted-foreground max-w-md">
-            Para consultorias, parcerias de P&D, palestras, mentorias ou colaborações
-            acadêmicas — escolha o canal mais conveniente.
+            {t("Para consultorias, parcerias de P&D, palestras, mentorias ou colaborações acadêmicas — escolha o canal mais conveniente.", "For consulting, R&D partnerships, speaking engagements, mentoring, or academic collaborations — choose the channel that works best for you.")}
           </p>
 
           <div className="mt-10 space-y-5">
@@ -79,8 +88,8 @@ function ContactPage() {
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">Localização</div>
-                <div className="font-medium">Brasil — atuação internacional</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">{t("Localização", "Location")}</div>
+                <div className="font-medium">{t("Brasil — atuação internacional", "Brazil — working internationally")}</div>
               </div>
             </div>
           </div>
@@ -91,7 +100,7 @@ function ContactPage() {
           className="rounded-2xl border border-border/60 bg-card/50 p-8 space-y-5"
         >
           <div>
-            <label className="text-xs uppercase tracking-widest text-muted-foreground">Nome</label>
+            <label className="text-xs uppercase tracking-widest text-muted-foreground">{t("Nome", "Name")}</label>
             <input
               required
               value={form.nome}
@@ -110,19 +119,19 @@ function ContactPage() {
             />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-widest text-muted-foreground">Assunto</label>
+            <label className="text-xs uppercase tracking-widest text-muted-foreground">{t("Assunto", "Subject")}</label>
             <select
               value={form.assunto}
               onChange={(e) => setForm({ ...form, assunto: e.target.value })}
               className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm focus:border-primary focus:outline-none"
             >
               {SUBJECT_OPTIONS.map((opt) => (
-                <option key={opt} value={opt}>{opt}</option>
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
           </div>
           <div>
-            <label className="text-xs uppercase tracking-widest text-muted-foreground">Mensagem</label>
+            <label className="text-xs uppercase tracking-widest text-muted-foreground">{t("Mensagem", "Message")}</label>
             <textarea
               required
               rows={5}
@@ -132,10 +141,10 @@ function ContactPage() {
             />
           </div>
           <button type="submit" className="w-full rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90">
-            Enviar mensagem
+            {t("Enviar mensagem", "Send message")}
           </button>
           {sent && (
-            <p className="text-sm text-primary text-center">Abrindo seu cliente de email para envio a rafael@ninnomuniz.com…</p>
+            <p className="text-sm text-primary text-center">{t("Abrindo seu cliente de email para envio a rafael@ninnomuniz.com…", "Opening your email client to send a message to rafael@ninnomuniz.com…")}</p>
           )}
         </form>
       </div>
