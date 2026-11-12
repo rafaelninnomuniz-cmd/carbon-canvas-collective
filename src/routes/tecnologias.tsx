@@ -9,6 +9,8 @@ export const Route = createFileRoute("/tecnologias")({
       { name: "description", content: "Tecnologias termoquímicas e bioquímicas para conversão de resíduos em energia: pirólise, gaseificação e biodigestão." },
       { property: "og:title", content: "Tecnologias — Conversão de Resíduos em Energia" },
       { property: "og:description", content: "Pirólise, gaseificação e biodigestão: rotas tecnológicas para descarbonização e economia circular." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: TechPage,

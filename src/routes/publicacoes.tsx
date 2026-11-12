@@ -10,6 +10,8 @@ export const Route = createFileRoute("/publicacoes")({
       { name: "description", content: "Publicações científicas de Rafael Ninno Muniz em energia sustentável, tratamento térmico de resíduos, pirólise, biomassa e sistemas inteligentes." },
       { property: "og:title", content: "Publicações — Rafael Ninno Muniz" },
       { property: "og:description", content: "Artigos, teses e capítulos integrados ao perfil ResearchGate (70+ publicações, 13.7k+ leituras)." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PublicationsPage,

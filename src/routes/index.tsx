@@ -8,6 +8,10 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
       { name: "description", content: "Atuação em tecnologias disruptivas e projetos inovadores para conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
+      { property: "og:title", content: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
+      { property: "og:description", content: "Atuação em tecnologias disruptivas e projetos inovadores para conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: HomePage,

@@ -10,6 +10,8 @@ export const Route = createFileRoute("/contato")({
       { name: "description", content: "Entre em contato com Rafael Muniz para consultoria, parcerias de pesquisa, palestras ou projetos de inovação." },
       { property: "og:title", content: "Contato — Rafael Muniz" },
       { property: "og:description", content: "Vamos conversar sobre seu projeto em materiais avançados de carbono." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ContactPage,

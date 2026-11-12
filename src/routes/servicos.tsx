@@ -28,6 +28,8 @@ export const Route = createFileRoute("/servicos")({
       { name: "description", content: "Consultoria em P&D, desenvolvimento de processos, análise de viabilidade e formação em materiais avançados de carbono." },
       { property: "og:title", content: "Serviços — Consultoria & P&D" },
       { property: "og:description", content: "Apoio estratégico e técnico em projetos de inovação com materiais carbonáceos e grafeno." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ServicesPage,

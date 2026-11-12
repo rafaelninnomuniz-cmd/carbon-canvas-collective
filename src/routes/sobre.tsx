@@ -10,6 +10,8 @@ export const Route = createFileRoute("/sobre")({
       { name: "description", content: "Trajetória de Rafael Muniz: engenheiro, pesquisador, consultor e educador em materiais avançados de carbono." },
       { property: "og:title", content: "Sobre — Rafael Muniz" },
       { property: "og:description", content: "Engenheiro e pesquisador atuando na fronteira entre sustentabilidade, ciência de materiais e inovação industrial." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
@@ -26,7 +28,7 @@ function AboutPage() {
           <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background">
             <img
               src={portrait}
-              alt=t("Retrato de Rafael Muniz em planta industrial de pirólise", "Portrait of Rafael Muniz at an industrial pyrolysis plant")
+              alt={t("Retrato de Rafael Muniz em planta industrial de pirólise", "Portrait of Rafael Muniz at an industrial pyrolysis plant")}
               width={1024}
               height={1280}
               loading="lazy"

@@ -10,6 +10,8 @@ export const Route = createFileRoute("/projetos")({
       { name: "description", content: "Principais projetos em execução: grafeno a partir de resíduos têxteis, smart materials, pirólise de lodo de ETE e geradores híbridos UPC + BESS." },
       { property: "og:title", content: "Projetos — Portfólio em Execução" },
       { property: "og:description", content: "Grafeno, smart materials, Retransformar e UPC + BESS: projetos aplicados em escala industrial." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ProjectsPage,

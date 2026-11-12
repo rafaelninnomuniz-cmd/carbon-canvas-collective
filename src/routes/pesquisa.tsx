@@ -24,6 +24,8 @@ export const Route = createFileRoute("/pesquisa")({
       { name: "description", content: "Linhas de pesquisa em conversão de resíduos, síntese de grafeno e desenvolvimento de carbonos precursores." },
       { property: "og:title", content: "Pesquisa — Materiais Avançados de Carbono" },
       { property: "og:description", content: "Síntese e caracterização de materiais grafênicos e carbonos avançados a partir de resíduos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ResearchPage,
