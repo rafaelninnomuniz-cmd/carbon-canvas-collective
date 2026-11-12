@@ -15,6 +15,7 @@ import { Route as PesquisaRouteImport } from './routes/pesquisa'
 import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TecnologiasRouteImport } from './routes/tecnologias'
 import { Route as TexgeneraRouteImport } from './routes/texgenera'
@@ -49,6 +50,11 @@ const ServicosRoute = ServicosRouteImport.update({
   path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
   '/texgenera': typeof TexgeneraRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
   '/texgenera': typeof TexgeneraRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/projetos': typeof ProjetosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/servicos': typeof ServicosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tecnologias': typeof TecnologiasRoute
   '/texgenera': typeof TexgeneraRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/projetos'
     | '/publicacoes'
     | '/servicos'
+    | '/sitemap.xml'
     | '/sobre'
     | '/tecnologias'
     | '/texgenera'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/projetos'
     | '/publicacoes'
     | '/servicos'
+    | '/sitemap.xml'
     | '/sobre'
     | '/tecnologias'
     | '/texgenera'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/projetos'
     | '/publicacoes'
     | '/servicos'
+    | '/sitemap.xml'
     | '/sobre'
     | '/tecnologias'
     | '/texgenera'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   ProjetosRoute: typeof ProjetosRoute
   PublicacoesRoute: typeof PublicacoesRoute
   ServicosRoute: typeof ServicosRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TecnologiasRoute: typeof TecnologiasRoute
   TexgeneraRoute: typeof TexgeneraRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjetosRoute: ProjetosRoute,
   PublicacoesRoute: PublicacoesRoute,
   ServicosRoute: ServicosRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TecnologiasRoute: TecnologiasRoute,
   TexgeneraRoute: TexgeneraRoute,
