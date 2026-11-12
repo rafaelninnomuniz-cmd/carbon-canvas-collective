@@ -23,9 +23,9 @@ export function SiteFooter() {
           <span className="text-xs uppercase tracking-widest text-muted-foreground">{t("Navegação", "Navigation")}</span>
           <Link to="/sobre" className="hover:text-primary">{t("Sobre", "About")}</Link>
           <Link to="/servicos" className="hover:text-primary">{t("Serviços", "Services")}</Link>
+          <Link to="/texgenera" className="hover:text-primary">TexGenera</Link>
           <Link to="/tecnologias" className="hover:text-primary">{t("Tecnologias", "Technologies")}</Link>
           <Link to="/projetos" className="hover:text-primary">{t("Projetos", "Projects")}</Link>
-          <Link to="/texgenera" className="hover:text-primary">TexGenera</Link>
           <Link to="/pesquisa" className="hover:text-primary">{t("Pesquisa", "Research")}</Link>
           
           <Link to="/contato" className="hover:text-primary">{t("Contato", "Contact")}</Link>

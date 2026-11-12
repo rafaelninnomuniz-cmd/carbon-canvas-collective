@@ -27,7 +27,7 @@ function ProjectsPage() {
       n: "01",
       icon: Atom,
       tag: t("Materiais Avançados", "Advanced Materials"),
-      title: t("Projeto Grafeno", "Graphene Project"),
+      title: t("Projeto TexGenera - Grafeno", "TexGenera Project - Graphene"),
       subtitle: t("Conversão de resíduos têxteis em carbonos precursores e grafeno.", "Converting textile waste into carbon precursors and graphene."),
       text: t("Desenvolvimento de rota tecnológica para escala de planta piloto a industrial de óxido de grafeno e derivados de carbono a partir de subprodutos têxteis. Inclui validação de funcionalidade e caracterização estrutural dos materiais obtidos.", "Developing a technological pathway from pilot plant to industrial-scale production of graphene oxide and carbon derivatives from textile by-products. Includes functional validation and structural characterization of the resulting materials."),
       bullets: [
@@ -132,6 +132,12 @@ function ProjectsPage() {
                 <p className="mt-4 text-xs italic text-muted-foreground border-t border-border/40 pt-3">
                   {p.org}
                 </p>
+              )}
+              {p.n === "01" && (
+                <Link to="/texgenera" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                  {t("Conheça a TexGenera", "Explore TexGenera")}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               )}
             </article>
           ))}

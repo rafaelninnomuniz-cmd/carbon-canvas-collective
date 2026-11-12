@@ -142,7 +142,7 @@ function HomePage() {
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
             {[
-              { t: "Projeto Grafeno", d: t("Resíduos têxteis → carbono precursor → grafeno.", "Textile waste → carbon precursor → graphene.") },
+              { t: t("Projeto TexGenera - Grafeno", "TexGenera Project - Graphene"), d: t("Resíduos têxteis → carbono precursor → grafeno.", "Textile waste → carbon precursor → graphene.") },
               { t: "Smart Materials", d: t("Carbonos para catalisadores automotivos.", "Carbon materials for automotive catalysts.") },
               { t: "Retransformar", d: t("Pirólise de lodo de ETE em biochar nutricional.", "Pyrolysis of wastewater sludge into nutrient-rich biochar.") },
               { t: "UPC + BESS", d: t("Geração híbrida multicombustível para Data Centers.", "Hybrid multi-fuel power generation for data centers.") },

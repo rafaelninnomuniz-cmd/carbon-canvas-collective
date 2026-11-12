@@ -7,9 +7,9 @@ const nav = [
   { to: "/", pt: "Início", en: "Home" },
   { to: "/sobre", pt: "Sobre", en: "About" },
   { to: "/servicos", pt: "Serviços", en: "Services" },
+  { to: "/texgenera", pt: "TexGenera", en: "TexGenera" },
   { to: "/tecnologias", pt: "Tecnologias", en: "Technologies" },
   { to: "/projetos", pt: "Projetos", en: "Projects" },
-  { to: "/texgenera", pt: "TexGenera", en: "TexGenera" },
   { to: "/pesquisa", pt: "Pesquisa", en: "Research" },
   { to: "/contato", pt: "Contato", en: "Contact" },
 ] as const;
