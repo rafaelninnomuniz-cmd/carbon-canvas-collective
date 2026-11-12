@@ -3,6 +3,7 @@ import { Flame, Wind, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
 import bgPlant from "@/assets/bg-plant.jpg";
 
 export const Route = createFileRoute("/tecnologias")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Tecnologias — Pirólise, Gaseificação e Biodigestão" },

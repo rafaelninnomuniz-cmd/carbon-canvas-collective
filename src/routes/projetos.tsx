@@ -4,6 +4,7 @@ import { ArrowRight, Atom, Cog, Recycle, Zap, Handshake, Youtube } from "lucide-
 import bgProjetos from "@/assets/bg-projetos.jpg";
 
 export const Route = createFileRoute("/projetos")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Projetos — Rafael Muniz" },

@@ -6,6 +6,7 @@ import { useLang } from "@/lib/i18n";
 const SITE = "https://texgenera.com";
 
 export const Route = createFileRoute("/texgenera")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "TexGenera — Grafeno a partir de resíduos têxteis | Rafael Muniz" },

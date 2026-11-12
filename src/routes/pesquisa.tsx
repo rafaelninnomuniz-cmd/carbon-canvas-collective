@@ -18,6 +18,7 @@ type Pub = {
 
 
 export const Route = createFileRoute("/pesquisa")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Pesquisa — Rafael Muniz" },

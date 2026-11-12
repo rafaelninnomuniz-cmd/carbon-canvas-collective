@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Serviços — Rafael Muniz" },

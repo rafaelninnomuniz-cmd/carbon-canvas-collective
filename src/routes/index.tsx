@@ -4,6 +4,7 @@ import { ArrowRight, Atom, FlaskConical, GraduationCap, Leaf, Lightbulb, Recycle
 import heroImg from "@/assets/hero-graphene.jpg";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },

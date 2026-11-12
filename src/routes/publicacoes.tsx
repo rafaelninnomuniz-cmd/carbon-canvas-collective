@@ -4,6 +4,7 @@ import { ExternalLink, FileText, BookOpen, Sparkles, GraduationCap, Handshake, A
 import bgLibrary from "@/assets/bg-library.jpg";
 
 export const Route = createFileRoute("/publicacoes")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Publicações — Rafael Ninno Muniz" },

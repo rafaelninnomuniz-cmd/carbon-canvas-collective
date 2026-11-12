@@ -4,6 +4,7 @@ import { Youtube, Linkedin, Instagram, BookOpen, ExternalLink } from "lucide-rea
 import portrait from "@/assets/portrait.jpg";
 
 export const Route = createFileRoute("/sobre")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Sobre — Rafael Muniz" },

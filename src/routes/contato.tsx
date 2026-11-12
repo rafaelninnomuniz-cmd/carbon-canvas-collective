@@ -4,6 +4,7 @@ import { Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/contato")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Contato — Rafael Muniz" },
