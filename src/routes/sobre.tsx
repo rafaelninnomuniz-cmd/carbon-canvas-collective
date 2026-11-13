@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { createFileRoute } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { Youtube, Linkedin, Instagram, BookOpen, ExternalLink } from "lucide-react";
@@ -5,16 +6,7 @@ import portrait from "@/assets/portrait.jpg";
 
 export const Route = createFileRoute("/sobre")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Sobre — Rafael Muniz" },
-      { name: "description", content: "Trajetória de Rafael Muniz: engenheiro, pesquisador, consultor e educador em materiais avançados de carbono." },
-      { property: "og:title", content: "Sobre — Rafael Muniz" },
-      { property: "og:description", content: "Engenheiro e pesquisador atuando na fronteira entre sustentabilidade, ciência de materiais e inovação industrial." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/sobre"),
   component: AboutPage,
 });
 
@@ -83,8 +75,8 @@ function AboutPage() {
             <h2 className="font-display text-xl font-semibold">{t("Formação Acadêmica", "Academic Background")}</h2>
             <ul className="mt-4 space-y-4 text-sm">
               {[
-                { t: t("Pós-Doutorado em Eng. de Produção e Sistemas Computacionais", "Postdoctoral Research in Production Engineering and Computational Systems"), i: "Universidade Federal Fluminense (UFF)", d: t("Otimização de usinas de pirólise via lógica fuzzy", "Optimization of pyrolysis plants using fuzzy logic") },
-                { t: t("Doutorado em Engenharia Elétrica", "PhD in Electrical Engineering"), i: "Universidade Federal do Pará (UFPA)", d: t("Indicadores de sustentabilidade energética e sistemas inteligentes", "Energy sustainability indicators and intelligent systems") },
+                { t: t("Pós-Doutorado em Eng. de Produção e Sistemas Computacionais", "Postdoctoral Research in Production Engineering and Computational Systems"), i: t("Universidade Federal Fluminense (UFF)", "Fluminense Federal University (UFF)"), d: t("Otimização de usinas de pirólise via lógica fuzzy", "Optimization of pyrolysis plants using fuzzy logic") },
+                { t: t("Doutorado em Engenharia Elétrica", "PhD in Electrical Engineering"), i: t("Universidade Federal do Pará (UFPA)", "Federal University of Pará (UFPA)"), d: t("Indicadores de sustentabilidade energética e sistemas inteligentes", "Energy sustainability indicators and intelligent systems") },
                 { t: t("Mestrado em Engenharia Elétrica — Fontes Renováveis", "Master's in Electrical Engineering — Renewable Energy Sources"), i: "UFPA", d: t("Soluções sustentáveis para sistemas isolados da Amazônia", "Sustainable solutions for isolated energy systems in the Amazon") },
                 { t: t("Bacharel em Engenharia Elétrica — Sistemas de Energia", "Bachelor's in Electrical Engineering — Power Systems"), i: "UFPA", d: t("Gaseificação de biomassa residual em comunidades isoladas", "Gasification of residual biomass in isolated communities") },
               ].map((f) => (

@@ -1,71 +1,68 @@
+import { pageHead } from "@/lib/page-metadata";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Flame, Wind, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 import bgPlant from "@/assets/bg-plant.jpg";
 
 export const Route = createFileRoute("/tecnologias")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Tecnologias — Pirólise, Gaseificação e Biodigestão" },
-      { name: "description", content: "Tecnologias termoquímicas e bioquímicas para conversão de resíduos em energia: pirólise, gaseificação e biodigestão." },
-      { property: "og:title", content: "Tecnologias — Conversão de Resíduos em Energia" },
-      { property: "og:description", content: "Pirólise, gaseificação e biodigestão: rotas tecnológicas para descarbonização e economia circular." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/tecnologias"),
   component: TechPage,
 });
 
-const techs = [
+function getTechs(t: <T>(pt: T, en: T) => T) {
+return [
   {
     id: "pirolise",
     icon: Flame,
-    tag: "Termoquímica",
-    title: "Pirólise",
+    tag: t("Termoquímica", "Thermochemical"),
+    title: t("Pirólise", "Pyrolysis"),
     summary:
-      "Decomposição térmica de materiais carbonáceos em ambiente livre de oxigênio, gerando biochar, bio-óleo e gás de síntese.",
+      t("Decomposição térmica de materiais carbonáceos em ambiente livre de oxigênio, gerando biochar, bio-óleo e gás de síntese.", "Thermal decomposition of carbonaceous materials in an oxygen-free environment, producing biochar, bio-oil, and syngas."),
     bullets: [
-      "Tratamento de lodo de ETE, biomassa e resíduos têxteis",
-      "Produção de biochar para uso agrícola e mercados de carbono",
-      "Carbonos precursores para grafeno e materiais avançados",
-      "Otimização operacional via lógica fuzzy e IA",
+      t("Tratamento de lodo de ETE, biomassa e resíduos têxteis", "Treatment of wastewater sludge, biomass, and textile waste"),
+      t("Produção de biochar para uso agrícola e mercados de carbono", "Biochar production for agricultural use and carbon markets"),
+      t("Carbonos precursores para grafeno e materiais avançados", "Carbon precursors for graphene and advanced materials"),
+      t("Otimização operacional via lógica fuzzy e IA", "Operational optimization using fuzzy logic and AI"),
     ],
-    products: ["Biochar", "Bio-óleo", "Gás de síntese", "Carbonos precursores"],
+    products: ["Biochar", t("Bio-óleo", "Bio-oil"), t("Gás de síntese", "Syngas"), t("Carbonos precursores", "Carbon precursors")],
   },
   {
     id: "gaseificacao",
     icon: Wind,
-    tag: "Termoquímica",
-    title: "Gaseificação",
+    tag: t("Termoquímica", "Thermochemical"),
+    title: t("Gaseificação", "Gasification"),
     summary:
-      "Conversão parcialmente oxidativa de biomassa e resíduos sólidos em gás de síntese (syngas) rico em H₂ e CO, base para energia e hidrogênio verde.",
+      t("Conversão parcialmente oxidativa de biomassa e resíduos sólidos em gás de síntese (syngas) rico em H₂ e CO, base para energia e hidrogênio verde.", "Partial oxidation of biomass and solid waste into synthesis gas (syngas) rich in H₂ and CO, a feedstock for energy and green hydrogen."),
     bullets: [
-      "Geração descentralizada para comunidades isoladas",
-      "Rota para hidrogênio verde a partir de biomassa residual",
-      "Aproveitamento energético de RSU e resíduos agroindustriais",
-      "Integração com células a combustível e ciclos térmicos",
+      t("Geração descentralizada para comunidades isoladas", "Decentralized power generation for isolated communities"),
+      t("Rota para hidrogênio verde a partir de biomassa residual", "A pathway to green hydrogen from residual biomass"),
+      t("Aproveitamento energético de RSU e resíduos agroindustriais", "Energy recovery from municipal solid waste and agro-industrial waste"),
+      t("Integração com células a combustível e ciclos térmicos", "Integration with fuel cells and thermal cycles"),
     ],
-    products: ["Syngas", "Hidrogênio verde", "Eletricidade", "Calor de processo"],
+    products: ["Syngas", t("Hidrogênio verde", "Green hydrogen"), t("Eletricidade", "Electricity"), t("Calor de processo", "Process heat")],
   },
   {
     id: "biodigestao",
     icon: Droplets,
-    tag: "Bioquímica",
-    title: "Biodigestão",
+    tag: t("Bioquímica", "Biochemical"),
+    title: t("Biodigestão", "Anaerobic Digestion"),
     summary:
-      "Degradação anaeróbia de matéria orgânica por consórcios microbianos, produzindo biogás (CH₄ + CO₂) e biofertilizante.",
+      t("Degradação anaeróbia de matéria orgânica por consórcios microbianos, produzindo biogás (CH₄ + CO₂) e biofertilizante.", "Anaerobic breakdown of organic matter by microbial communities, producing biogas (CH₄ + CO₂) and biofertilizer."),
     bullets: [
-      "Resíduos da agroindústria, dejetos animais e lodo de ETE",
-      "Biogás para geração elétrica, térmica ou biometano",
-      "Captura de metano e geração de créditos de carbono",
-      "Digestato como biofertilizante para economia circular",
+      t("Resíduos da agroindústria, dejetos animais e lodo de ETE", "Agro-industrial waste, animal manure, and wastewater sludge"),
+      t("Biogás para geração elétrica, térmica ou biometano", "Biogas for electricity, heat, or biomethane production"),
+      t("Captura de metano e geração de créditos de carbono", "Methane capture and carbon credit generation"),
+      t("Digestato como biofertilizante para economia circular", "Digestate as a biofertilizer for the circular economy"),
     ],
-    products: ["Biogás", "Biometano", "Biofertilizante", "Créditos de carbono"],
+    products: [t("Biogás", "Biogas"), t("Biometano", "Biomethane"), t("Biofertilizante", "Biofertilizer"), t("Créditos de carbono", "Carbon credits")],
   },
 ] as const;
+}
 
 export default function TechPage() {
+  const { t } = useLang();
+  const techs = getTechs(t);
   return (
     <>
       <section className="relative mx-auto max-w-6xl px-6 py-20">
@@ -84,14 +81,12 @@ export default function TechPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         </div>
         <div className="max-w-3xl">
-          <span className="text-xs font-mono uppercase tracking-widest text-primary">Tecnologias</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary">{t("Tecnologias", "Technologies")}</span>
           <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold">
-            <span className="text-gradient">Rotas tecnológicas</span> para converter resíduos em energia e materiais avançados.
+            <span className="text-gradient">{t("Rotas tecnológicas", "Technological pathways")}</span>{t(" para converter resíduos em energia e materiais avançados.", " for converting waste into energy and advanced materials.")}
           </h1>
           <p className="mt-5 text-muted-foreground">
-            Atuo no desenvolvimento, modelagem e otimização de três pilares centrais do
-            saneamento energético: pirólise, gaseificação e biodigestão — combinando
-            termoquímica, bioquímica e inteligência computacional.
+            {t("Atuo no desenvolvimento, modelagem e otimização de três pilares centrais do saneamento energético: pirólise, gaseificação e biodigestão — combinando termoquímica, bioquímica e inteligência computacional.", "I develop, model, and optimize three core pillars of waste-to-energy solutions: pyrolysis, gasification, and anaerobic digestion — combining thermochemistry, biochemistry, and computational intelligence.")}
           </p>
         </div>
 
@@ -108,27 +103,27 @@ export default function TechPage() {
         </nav>
 
         <div className="mt-16 space-y-20">
-          {techs.map((t, idx) => (
+          {techs.map((tech, idx) => (
             <article
-              key={t.id}
-              id={t.id}
+              key={tech.id}
+              id={tech.id}
               className="grid gap-10 lg:grid-cols-[auto_1fr] scroll-mt-24"
             >
               <div className="lg:w-72">
                 <div className="grid h-16 w-16 place-items-center rounded-2xl bg-primary/15 text-primary border border-primary/30">
-                  <t.icon className="h-8 w-8" />
+                  <tech.icon className="h-8 w-8" />
                 </div>
                 <div className="mt-5 font-mono text-xs text-primary uppercase tracking-widest">
-                  0{idx + 1} · {t.tag}
+                  0{idx + 1} · {tech.tag}
                 </div>
-                <h2 className="mt-2 font-display text-3xl font-semibold">{t.title}</h2>
+                <h2 className="mt-2 font-display text-3xl font-semibold">{tech.title}</h2>
               </div>
 
               <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card/80 to-background p-8">
-                <p className="text-muted-foreground leading-relaxed">{t.summary}</p>
+                <p className="text-muted-foreground leading-relaxed">{tech.summary}</p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {t.bullets.map((b) => (
+                  {tech.bullets.map((b) => (
                     <div key={b} className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
                       <span>{b}</span>
@@ -138,10 +133,10 @@ export default function TechPage() {
 
                 <div className="mt-7 border-t border-border/60 pt-5">
                   <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                    Produtos & Saídas
+                    {t("Produtos & Saídas", "Products & Outputs")}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {t.products.map((p) => (
+                    {tech.products.map((p) => (
                       <span
                         key={p}
                         className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
@@ -163,11 +158,10 @@ export default function TechPage() {
           <div className="relative grid gap-6 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-                Quer aplicar uma dessas rotas?
+                {t("Quer aplicar uma dessas rotas?", "Want to apply one of these pathways?")}
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Atuo desde estudos de viabilidade técnica e econômica até a modelagem,
-                certificação de biochar e otimização operacional de plantas industriais.
+                {t("Atuo desde estudos de viabilidade técnica e econômica até a modelagem, certificação de biochar e otimização operacional de plantas industriais.", "My work spans technical and economic feasibility studies, modeling, biochar certification, and operational optimization of industrial plants.")}
               </p>
             </div>
             <div className="flex md:justify-end">
@@ -175,7 +169,7 @@ export default function TechPage() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90"
               >
-                Falar sobre o projeto <ArrowRight className="h-4 w-4" />
+                {t("Falar sobre o projeto", "Discuss your project")} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

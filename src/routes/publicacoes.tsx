@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { useLang } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ExternalLink, FileText, BookOpen, Sparkles, GraduationCap, Handshake, ArrowRight } from "lucide-react";
@@ -5,16 +6,7 @@ import bgLibrary from "@/assets/bg-library.jpg";
 
 export const Route = createFileRoute("/publicacoes")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Publicações — Rafael Ninno Muniz" },
-      { name: "description", content: "Publicações científicas de Rafael Ninno Muniz em energia sustentável, tratamento térmico de resíduos, pirólise, biomassa e sistemas inteligentes." },
-      { property: "og:title", content: "Publicações — Rafael Ninno Muniz" },
-      { property: "og:description", content: "Artigos, teses e capítulos integrados ao perfil ResearchGate (70+ publicações, 13.7k+ leituras)." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/publicacoes"),
   component: PublicationsPage,
 });
 
@@ -96,20 +88,20 @@ export default function PublicationsPage() {
       abstract: t("Modelo wavelet CNN-LSTM para previsão de geração elétrica baseada em sistemas térmicos de biomassa.", "A wavelet CNN-LSTM model for forecasting electricity generation from biomass thermal systems."),
     },
     {
-      title: "Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético",
+      title: t("Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético", "Doctoral Thesis — Energy sustainability indicators and intelligent systems applied to energy planning"),
       venue: t("UFPA — Programa de Pós-Graduação em Engenharia Elétrica", "UFPA — Graduate Program in Electrical Engineering"),
       year: "2021",
       type: "Tese",
       url: "https://www.researchgate.net/profile/Rafael-Muniz",
-      abstract: t("Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.", "A doctoral thesis defended at Universidade Federal do Pará, proposing energy sustainability indicators and intelligent systems to support decision-making in planning Brazil’s electricity mix."),
+      abstract: t("Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.", "A doctoral thesis defended at the Federal University of Pará, proposing energy sustainability indicators and intelligent systems to support decision-making in planning Brazil’s electricity mix."),
     },
     {
-      title: "Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia",
+      title: t("Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia", "Master’s Dissertation — Sustainable renewable energy solutions for isolated systems in the Amazon"),
       venue: t("UFPA — Engenharia Elétrica · Fontes Renováveis", "UFPA — Electrical Engineering · Renewable Energy"),
       year: "2016",
       type: "Dissertação",
       url: "https://www.researchgate.net/profile/Rafael-Muniz",
-      abstract: t("Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.", "A master’s dissertation defended at Universidade Federal do Pará exploring renewable energy alternatives for isolated Amazonian communities, focusing on residual biomass gasification."),
+      abstract: t("Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.", "A master’s dissertation defended at the Federal University of Pará exploring renewable energy alternatives for isolated Amazonian communities, focusing on residual biomass gasification."),
     },
   ];
 
@@ -218,7 +210,7 @@ export default function PublicationsPage() {
         <a className="text-primary hover:underline" href="https://www.researchgate.net/profile/Rafael-Muniz" target="_blank" rel="noopener noreferrer">
           {t("perfil no ResearchGate", "ResearchGate profile")}
         </a>{" "}
-        para a bibliografia completa.
+        {t("para a bibliografia completa.", "for the complete bibliography.")}
       </p>
 
       <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-background p-8 sm:p-10">

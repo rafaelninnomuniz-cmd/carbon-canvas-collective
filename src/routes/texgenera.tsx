@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Atom, Award, Battery, FlaskConical, Flame, Layers, Recycle, ShieldCheck } from "lucide-react";
 import bgProjetos from "@/assets/bg-projetos.jpg";
@@ -7,16 +8,7 @@ const SITE = "https://texgenera.com";
 
 export const Route = createFileRoute("/texgenera")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "TexGenera — Grafeno a partir de resíduos têxteis | Rafael Muniz" },
-      { name: "description", content: "TexGenera: deeptech brasileira que converte resíduos têxteis multicomponentes em carbonos precursores e grafeno por pirólise avançada proprietária. Rafael Muniz é CTO." },
-      { property: "og:title", content: "TexGenera — A Alquimia do Carbono" },
-      { property: "og:description", content: "Pirólise proprietária que transforma resíduos têxteis em grafeno e carbonos de alto valor. TRL 5 validado com o SENAI ISI Eletroquímica." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/texgenera"),
   component: TexGeneraPage,
 });
 
@@ -76,7 +68,7 @@ function TexGeneraPage() {
             { icon: ShieldCheck, v: "TRL 5", l: t("Validado e certificado", "Validated and certified") },
             { icon: Layers, v: t("5 etapas", "5 stages"), l: t("Tecnologia proprietária", "Proprietary technology") },
             { icon: Recycle, v: "0", l: t("Separação de fibras", "Fiber segregation") },
-            { icon: Atom, v: "Graphene", l: t("Produto de alto valor", "High-value product") },
+            { icon: Atom, v: t("Grafeno", "Graphene"), l: t("Produto de alto valor", "High-value product") },
           ].map((s) => (
             <div key={s.l} className="rounded-xl border border-border/60 bg-card/50 p-5">
               <s.icon className="h-5 w-5 text-primary" />

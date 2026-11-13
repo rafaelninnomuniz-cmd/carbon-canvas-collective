@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { useLang } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Atom, Cog, Recycle, Zap, Handshake, Youtube } from "lucide-react";
@@ -5,16 +6,7 @@ import bgProjetos from "@/assets/bg-projetos.jpg";
 
 export const Route = createFileRoute("/projetos")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Projetos — Rafael Muniz" },
-      { name: "description", content: "Principais projetos em execução: grafeno a partir de resíduos têxteis, smart materials, pirólise de lodo de ETE e geradores híbridos UPC + BESS." },
-      { property: "og:title", content: "Projetos — Portfólio em Execução" },
-      { property: "og:description", content: "Grafeno, smart materials, Retransformar e UPC + BESS: projetos aplicados em escala industrial." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/projetos"),
   component: ProjectsPage,
 });
 
@@ -35,7 +27,7 @@ function ProjectsPage() {
         t("Valorização de resíduos têxteis industriais", "Valorization of industrial textile waste"),
         t("Validação de funcionalidade e caracterização", "Functional validation and characterization"),
       ],
-      org: t("Projeto da TexGenera, da qual sou CTO, em parceria com o ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica).", "A TexGenera project, where I serve as CTO, in partnership with ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica)."),
+      org: t("Projeto da TexGenera, da qual sou CTO, em parceria com o ISI Eletroquímica (Instituto Senai de Inovação em Eletroquímica).", "A TexGenera project, where I serve as CTO, in partnership with SENAI Innovation Institute for Electrochemistry (ISI Eletroquímica)."),
     },
     {
       n: "02",
@@ -49,7 +41,7 @@ function ProjectsPage() {
         t("Substituição de insumos convencionais", "Replacing conventional inputs"),
         t("Cadeia circular têxtil → automotivo", "Circular textile-to-automotive value chain"),
       ],
-      org: t("Projeto da TexGenera em parceria com o SENAI ISI Eletroquímica.", "A TexGenera project in partnership with SENAI ISI Eletroquímica."),
+      org: t("Projeto da TexGenera em parceria com o SENAI ISI Eletroquímica.", "A TexGenera project in partnership with the SENAI Innovation Institute for Electrochemistry."),
     },
     {
       n: "03",
@@ -57,7 +49,7 @@ function ProjectsPage() {
       tag: t("Saneamento + Solo", "Sanitation + Soil"),
       title: t("Projeto Retransformar", "Retransformar Project"),
       subtitle: t("Pirólise de lodo de ETE para conversão em biochar agregado de nutrientes.", "Pyrolysis of wastewater treatment sludge to produce nutrient-enriched biochar."),
-      text: t("Usina de pirólise em escala industrial para tratamento de lodo sanitário em Niterói (RJ), produzindo biochar enriquecido com nutrientes para recuperação de solos degradados. Projeto executado pela UFF (Universidade Federal Fluminense) através do LEI (Laboratório de Empreendimentos Inovadores).", "An industrial-scale pyrolysis plant for treating sewage sludge in Niterói (RJ), producing nutrient-enriched biochar to restore degraded soils. Implemented by UFF (Universidade Federal Fluminense) through LEI (Laboratório de Empreendimentos Inovadores)."),
+      text: t("Usina de pirólise em escala industrial para tratamento de lodo sanitário em Niterói (RJ), produzindo biochar enriquecido com nutrientes para recuperação de solos degradados. Projeto executado pela UFF (Universidade Federal Fluminense) através do LEI (Laboratório de Empreendimentos Inovadores).", "An industrial-scale pyrolysis plant for treating sewage sludge in Niterói (RJ), producing nutrient-enriched biochar to restore degraded soils. Implemented by Fluminense Federal University (UFF) through the Innovative Enterprises Laboratory (LEI)."),
       bullets: [
         t("Pirólise de lodo de ETE em escala industrial", "Industrial-scale pyrolysis of wastewater treatment sludge"),
         t("Biochar agregado de nutrientes", "Nutrient-enriched biochar"),

@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { useLang } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
 import { Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
@@ -5,16 +6,7 @@ import { useState } from "react";
 
 export const Route = createFileRoute("/contato")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Contato — Rafael Muniz" },
-      { name: "description", content: "Entre em contato com Rafael Muniz para consultoria, parcerias de pesquisa, palestras ou projetos de inovação." },
-      { property: "og:title", content: "Contato — Rafael Muniz" },
-      { property: "og:description", content: "Vamos conversar sobre seu projeto em materiais avançados de carbono." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/contato"),
   component: ContactPage,
 });
 

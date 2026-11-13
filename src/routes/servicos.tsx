@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import {
@@ -23,16 +24,7 @@ import {
 
 export const Route = createFileRoute("/servicos")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Serviços — Rafael Muniz" },
-      { name: "description", content: "Consultoria em P&D, desenvolvimento de processos, análise de viabilidade e formação em materiais avançados de carbono." },
-      { property: "og:title", content: "Serviços — Consultoria & P&D" },
-      { property: "og:description", content: "Apoio estratégico e técnico em projetos de inovação com materiais carbonáceos e grafeno." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/servicos"),
   component: ServicesPage,
 });
 
@@ -200,11 +192,11 @@ function ServicesPage() {
 
       <div className="mt-16 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-card/40 p-8">
         <div>
-          <h3 className="font-display text-xl font-semibold">Vamos construir algo juntos?</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Conte sobre o seu desafio — respondo em até 48h úteis.</p>
+          <h3 className="font-display text-xl font-semibold">{t("Vamos construir algo juntos?", "Shall we build something together?")}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{t("Conte sobre o seu desafio — respondo em até 48h úteis.", "Tell me about your challenge — I respond within 48 business hours.")}</p>
         </div>
         <Link to="/contato" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:opacity-90">
-          Falar com Rafael <ArrowRight className="h-4 w-4" />
+          {t("Falar com Rafael", "Talk to Rafael")} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </section>

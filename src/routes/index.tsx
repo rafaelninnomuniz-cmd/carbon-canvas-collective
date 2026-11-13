@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { ArrowRight, Atom, FlaskConical, GraduationCap, Leaf, Lightbulb, Recycle, Rocket } from "lucide-react";
@@ -5,16 +6,7 @@ import heroImg from "@/assets/hero-graphene.jpg";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
-      { name: "description", content: "Atuação em tecnologias disruptivas e projetos inovadores para conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
-      { property: "og:title", content: "Rafael Muniz — Engenheiro, Pesquisador e Consultor" },
-      { property: "og:description", content: "Atuação em tecnologias disruptivas e projetos inovadores para conversão de resíduos em materiais avançados como carbonos precursores e grafeno." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/"),
   component: HomePage,
 });
 

@@ -1,3 +1,4 @@
+import { pageHead } from "@/lib/page-metadata";
 import { useLang } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Beaker, CircuitBoard, Layers, Microscope, Sparkles, Zap, Rocket, BookOpen, ExternalLink, FileText, GraduationCap, Handshake } from "lucide-react";
@@ -19,16 +20,7 @@ type Pub = {
 
 export const Route = createFileRoute("/pesquisa")({
   staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "Pesquisa — Rafael Muniz" },
-      { name: "description", content: "Linhas de pesquisa em conversão de resíduos, síntese de grafeno e desenvolvimento de carbonos precursores." },
-      { property: "og:title", content: "Pesquisa — Materiais Avançados de Carbono" },
-      { property: "og:description", content: "Síntese e caracterização de materiais grafênicos e carbonos avançados a partir de resíduos." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead("/pesquisa"),
   component: ResearchPage,
 });
 
@@ -45,8 +37,8 @@ function ResearchPage() {
     { title: "Time Series Forecasting of Natural Inflow in Hydroelectric Power Plants Using Hyper-Tuned Temporal Fusion Transformer With Hodrick–Prescott Filter", venue: "IET Generation, Transmission & Distribution", year: "2025", type: "Artigo", url: "https://www.researchgate.net/publication/391450276" },
     { title: "Time Series Forecasting of Thermal Systems Dispatch in Legal Amazon Using Machine Learning", venue: "Applied Sciences", year: "2024", type: "Artigo", url: "https://www.researchgate.net/publication/385308347", abstract: t("Métodos de ensemble (bagging, boosting, stacking) aplicados ao consumo de diesel e despacho térmico na Amazônia Legal.", "Ensemble methods (bagging, boosting, stacking) applied to diesel consumption and thermal generation dispatch in Brazil’s Legal Amazon.") },
     { title: "Wavelet CNN-LSTM time series forecasting of electricity power generation considering biomass thermal systems", venue: "IET Generation, Transmission & Distribution", year: "2024", type: "Artigo", url: "https://www.researchgate.net/publication/384928332", abstract: t("Modelo wavelet CNN-LSTM para previsão de geração elétrica baseada em sistemas térmicos de biomassa.", "A wavelet CNN-LSTM model for forecasting electricity generation from biomass thermal systems.") },
-    { title: "Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético", venue: t("UFPA — Programa de Pós-Graduação em Engenharia Elétrica", "UFPA — Graduate Program in Electrical Engineering"), year: "2021", type: "Tese", url: "https://www.researchgate.net/profile/Rafael-Muniz", abstract: t("Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.", "A doctoral thesis defended at Universidade Federal do Pará, proposing energy sustainability indicators and intelligent systems to support decision-making in planning Brazil’s electricity mix.") },
-    { title: "Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia", venue: t("UFPA — Engenharia Elétrica · Fontes Renováveis", "UFPA — Electrical Engineering · Renewable Energy"), year: "2016", type: "Dissertação", url: "https://www.researchgate.net/profile/Rafael-Muniz", abstract: t("Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.", "A master’s dissertation defended at Universidade Federal do Pará exploring renewable energy alternatives for isolated Amazonian communities, focusing on residual biomass gasification.") },
+    { title: t("Tese de Doutorado — Indicadores de sustentabilidade energética e sistemas inteligentes aplicados ao planejamento energético", "Doctoral Thesis — Energy sustainability indicators and intelligent systems applied to energy planning"), venue: t("UFPA — Programa de Pós-Graduação em Engenharia Elétrica", "UFPA — Graduate Program in Electrical Engineering"), year: "2021", type: "Tese", url: "https://www.researchgate.net/profile/Rafael-Muniz", abstract: t("Tese de Doutorado defendida na Universidade Federal do Pará, propondo indicadores de sustentabilidade energética e o uso de sistemas inteligentes para apoio à decisão no planejamento da matriz elétrica brasileira.", "A doctoral thesis defended at the Federal University of Pará, proposing energy sustainability indicators and intelligent systems to support decision-making in planning Brazil’s electricity mix.") },
+    { title: t("Dissertação de Mestrado — Soluções sustentáveis em fontes renováveis para sistemas isolados da Amazônia", "Master’s Dissertation — Sustainable renewable energy solutions for isolated systems in the Amazon"), venue: t("UFPA — Engenharia Elétrica · Fontes Renováveis", "UFPA — Electrical Engineering · Renewable Energy"), year: "2016", type: "Dissertação", url: "https://www.researchgate.net/profile/Rafael-Muniz", abstract: t("Dissertação defendida na Universidade Federal do Pará abordando alternativas energéticas renováveis para comunidades isoladas da Amazônia, com foco em gaseificação de biomassa residual.", "A master’s dissertation defended at the Federal University of Pará exploring renewable energy alternatives for isolated Amazonian communities, focusing on residual biomass gasification.") },
   ];
 
   const pubStats = [
@@ -227,7 +219,7 @@ function ResearchPage() {
           <a className="text-primary hover:underline" href="https://www.researchgate.net/profile/Rafael-Muniz" target="_blank" rel="noopener noreferrer">
             {t("perfil no ResearchGate", "ResearchGate profile")}
           </a>{" "}
-          para a bibliografia completa.
+          {t("para a bibliografia completa.", "for the complete bibliography.")}
         </p>
 
         <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/60 to-background p-8 sm:p-10">

@@ -15,9 +15,9 @@ const nav = [
 ] as const;
 
 function LangToggle() {
-  const { lang, setLang } = useLang();
+  const { lang, setLang, t } = useLang();
   return (
-    <div className="flex items-center rounded-md border border-border/60 text-xs font-mono" role="group" aria-label="Idioma / Language">
+    <div className="flex items-center rounded-md border border-border/60 text-xs font-mono" role="group" aria-label={t("Idioma", "Language")}>
       {(["pt", "en"] as const).map((l) => (
         <button
           key={l}
